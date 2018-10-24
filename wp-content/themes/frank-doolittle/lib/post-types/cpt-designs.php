@@ -162,7 +162,7 @@ $design_tags = array(
     'size' => 'Size', 
     'complexity' => 'Complexity', 
     'application' => 'Application', 
-    'event' => 'Event', 
+    'event' => 'Events', 
     );
 
 foreach( $design_tags as $slug => $name ) {

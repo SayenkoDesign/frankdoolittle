@@ -40,7 +40,8 @@ get_header(); ?>
                                   'weight' => 'Weight', 
                                   'properties' => 'Properties', 
                                   'price' => 'Price', 
-                                  'origin' => 'Origin'
+                                  'origin' => 'Origin',
+                                  'event' => 'Event'
                                    );
                 
                 // Keep first 4 filters open by default 
@@ -91,7 +92,7 @@ get_header(); ?>
                         <header class="page-header">
                             <?php
                             the_archive_title( '<h1 class="archive-title">', '</h1>' );
-                            the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
+                            // the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
                             
                             <div class="filters grid-filters"><?php echo facetwp_display( 'sort' ); ?></div>
                         </header>

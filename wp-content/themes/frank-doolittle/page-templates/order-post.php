@@ -36,7 +36,7 @@ get_header(); ?>
          <div class="wrap">
             <div class="row columns text-center">
                 <?php
-                printf( '<h1 class="order-post-title">Order #%s</h1>', $custom_order_id );
+                printf( '<h1 class="order-post-title">%s</h1>', $custom_order_id );
                 printf( '<p class="orders-date">%s</p>', $order_date );
                 printf( '<p class="order-for">For: %s</p>', $product );
                 printf( '<a href="%s" class="btn-secondary"> < Back to Orders</a>', $order_archive );

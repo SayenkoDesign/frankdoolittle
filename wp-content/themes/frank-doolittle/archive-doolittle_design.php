@@ -23,8 +23,8 @@ get_header(); ?>
                             <div class="filters design-filters">
                             
                             <?php 
-                                echo facetwp_display( 'facet', 'design_filter_organization' );
-                                echo facetwp_display( 'facet', 'design_filter_occasion' );
+                                // echo facetwp_display( 'facet', 'design_filter_organization' );
+                                // echo facetwp_display( 'facet', 'design_filter_occasion' );
                                 echo facetwp_display( 'facet', 'design_filter_decoration' );
                                 echo facetwp_display( 'facet', 'design_filter_theme' );
                             ?>
