@@ -1,0 +1,206 @@
+// Typography
+
+/* Typography resets */
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+	font-family: $paragraph-font-family;
+	font-style: $paragraph-font-style;
+	font-weight: 600;
+	font-size: $paragraph-font-size;
+	color: $paragraph-font-color;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+a {
+	text-decoration: none;
+}
+
+
+// Links
+a {
+ 	outline: none!important;
+
+	transition: background 200ms linear, color 200ms linear;
+
+	&:focus {
+		outline: none!important;
+	}
+
+	&:visited {
+		//color: inherit;
+	} // &:visited
+
+} // a
+
+
+
+a[href^="tel"]:link,
+a[href^="tel"]:visited,
+a[href^="tel"]:hover {
+    text-decoration: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+// Adjust based on theme
+@include breakpoint(xlarge down) {
+    a[href^="tel"]:link,
+    a[href^="tel"]:visited,
+    a[href^="tel"]:hover {
+        text-decoration: none;
+        pointer-events: auto;
+        cursor: pointer;
+    }
+}
+
+
+strong {
+	font-weight: 700;
+}
+
+p, li {
+    strong {
+        font-family: $jura;
+        font-weight: 700;    
+    }
+}
+
+/* Headings
+--------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $header-color;
+	font-family: $header-font-family;
+
+	a {
+		color: $anchor-color;
+	}
+}
+
+
+
+// Heading Line Heights
+
+ h1,
+.h1 {
+    letter-spacing: 1px;
+}
+h2 {
+   letter-spacing: 1px;
+   margin-bottom: 15px;
+}
+
+// entry content
+
+
+@mixin fancy-list {
+    @include list-reset;
+    margin-bottom: $global-margin;
+ 
+    li {
+        position: relative;
+        min-height: 30px;
+        padding: 0 0 18px 40px!important;
+        line-height: inherit;
+        margin-bottom: 5px;
+        
+        &:before {
+            content: '';
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            top: 1px;
+            left: 0;
+            border-radius: 50%;
+            border: 2px solid $dark-gray;
+        }
+        
+        &:after {
+            content: '';
+            display: inline-block;
+            border: solid $dark-gray;
+            border-width: 0 2px 2px 0;
+            transform: rotate(-45deg);
+            width: 8px;
+            height: 8px;  
+            position: absolute;
+            top: 9px;
+            left: 6.5px; 
+        }
+
+        a {
+            text-decoration: none;   
+        }
+    }
+
+}
+
+
+
+ .entry-content {
+    
+    h1 {
+        margin-bottom: $global-margin;   
+    }
+
+	a:not([class]) {
+		color: $anchor-color;
+		text-decoration: none;
+		text-decoration: underline;
+
+		&:hover {
+			color: $anchor-color-hover;
+			text-decoration: none;
+		}
+	}
+
+	p, li {
+		line-height: $paragraph-line-height;
+
+	}
+
+	p, ul {
+		margin-bottom: $paragraph-margin-bottom;
+	}
+
+    p:last-child, ul:last-child {
+        margin-bottom: 0;
+    }
+    
+    ul, ol {
+        @include list-reset;
+        
+    }
+
+	ul:not([class]),
+	ol:not([class]) {
+ 		margin: 0 0 18px 30px;
+ 		
+	}
+
+    ul:not([class]) {
+        list-style: disc;
+    }
+    
+    ol:not([class]) {
+        list-style: decimal;
+    }
+	
+}
+
+
+sup {
+    vertical-align: super;
+    top: auto;
+    padding-right: 3px;
+}

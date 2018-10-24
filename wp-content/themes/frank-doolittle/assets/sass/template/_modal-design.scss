@@ -1,0 +1,67 @@
+// Modal - Design
+
+.modal-design.reveal {
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+     
+    .modal-content {
+        background: #fff;   
+        padding: 20px;
+        
+        @include breakpoint(large) {
+            padding: 20px 50px;
+        }
+    }
+    
+    .modal-description {
+        //padding: $global-padding 0;
+    }
+    
+    h3 {
+      font-family: $jocky;
+      font-weight: 400;
+      font-size: 20px;
+      color: #1E1E1E;
+      letter-spacing: 0;
+      line-height: normal;
+      text-transform: uppercase;
+   }
+    
+    .designs {
+        
+        padding: $global-padding;
+        
+        .grid {
+            background: #ececec;
+            margin: 0 auto;
+            padding: $global-padding 0;
+        }
+
+    }
+
+    
+    .designs {
+         margin-bottom: $global-margin;   
+    }
+    
+    .clear-all {
+        margin-top: $global-margin;   
+    }
+    
+    .notice {
+        padding: $global-padding 0;  
+    }
+    
+    .grid:empty {
+        display: none;   
+    }
+    
+    .grid:not(:empty) + .notice {
+        display: none;   
+    }
+    
+    .grid:empty + .notice + .actions {
+        display: none;   
+    }
+}

@@ -1,0 +1,193 @@
+/*
+Header
+---------------------------------------------- */
+
+
+.site-header {
+    background: #fff;
+    
+    @include breakpoint(large down) {
+     
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        
+        z-index: 99;
+        
+        
+        .logged-in & {
+             
+            top: 46px;
+            
+            @media screen and (min-width: 783px) {
+                top: 32px;
+            }        
+        }
+    
+    }
+    
+ 	@include breakpoint(large up) {
+		height: 200px;
+        border-bottom: 1px solid #e0e0e0;
+	}
+    
+    
+	.pre-header {
+		background-color: $navy;
+		color: white;
+		padding: 4px 0;
+		display: none;
+		@include breakpoint(large) {
+			display: block;
+		}
+		a {
+			color: #D7D5D5;
+			&:hover {
+				color: $red;
+			}
+		}
+		.sign-in-area {
+			text-transform: uppercase;
+			font-family: $jura;
+            font-weight: 700;
+			font-size: 13px;
+			margin-top: 5px;
+		}
+		.phone {
+			a {
+				float: right;
+				font-family: $jura;
+                font-weight: 700;
+				font-size: 21px;
+			}
+		}
+	}
+	.mid-header {
+		height: 82px;
+        border-bottom: 1px solid #e0e0e0;
+        
+		@include breakpoint(large) {
+			padding: 11px 0 0;
+            border-bottom: 0;
+		}
+		.members-logo {
+			padding-top: 10px;
+			display: none;
+			@include breakpoint(large) {
+				display: block;
+			}
+			img{
+					margin-bottom: 15px;
+			}
+		}
+
+		.mobile-phone {
+			display: block;
+			margin-top: 20px;
+			@include breakpoint(large up) {
+				display: none;
+			}
+		}
+	}
+	.menu-toggle{
+		display: block;
+		top: 38px;
+		@include breakpoint(large up) {
+			display: none;
+		}
+	}
+	.header-logo-text {
+		display: inline-block;
+	}
+    
+	.site-branding {
+		text-align: center;
+		img {
+			@include breakpoint(medium down) {
+				max-height: 63px;
+				margin-top: 8px;
+			}
+		}
+	}
+    
+    .favorites-and-quotes {
+        text-align: right;
+    }
+    
+         
+    .search-form {
+        border: solid 3px $navy;
+        
+        display: none;
+        @include breakpoint(large) {
+            display: block;
+        }
+    }
+    
+} //site-header
+
+
+
+.site-header {
+
+	&.fixed {
+		display: none;
+		
+		@media #{$xlarge-up} {
+      		display: block;
+		}
+        
+        .logged-in & {
+         
+            top: 46px;
+            
+            @media screen and (min-width: 783px) {
+                top: 32px;
+            }        
+        }
+		
+		transition: transform .25s ease-in-out;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		z-index: 99;
+		transform: translateY(-150%);
+		background-color: white;
+		box-shadow: 0px 1px 4px #888888;	
+        
+        .wrap {
+            position: relative;
+            top: auto;   
+        }
+
+	}
+
+	&.fixed.fixed-show {
+		transform: translateY(0);
+	}
+}
+
+
+
+
+.nav-row {
+	
+	@include breakpoint(large down) {
+		padding-right: 0!important;
+	    padding-left: 0!important;
+	}
+	.search-form {
+		display: block;
+		margin: 15px auto;
+		width: 90%;
+		 input {
+			width: 100%;
+		}
+		@include breakpoint(large up) {
+			display: none;
+		}
+	}
+}

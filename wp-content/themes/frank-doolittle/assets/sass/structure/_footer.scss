@@ -1,0 +1,215 @@
+//
+// Footer
+// --------------------------------------------------
+.footer-widgets {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include breakpoint(large) {
+        background-image: url('assets/images/rectangle5.jpg');
+    }
+    .contact-info {
+        background-color: #e7e7e7;
+        text-align: center;
+        padding-top: 36px;
+        padding-bottom: 25px;
+        @include breakpoint(large) {
+            background-color: transparent;
+            text-align: left;
+        }
+        .contact-icons {
+            font-family: $jura;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 15px;
+            line-height: 17px;
+            svg {
+                margin-right: 5px;
+            }
+            
+            > * {
+                vertical-align: middle;
+                display: inline-block;   
+            }
+        }
+    }
+    h3 {
+        margin-bottom: 10px;
+    }
+    .company-hours,
+    .company-location {
+        font-family: $jura;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 17px;
+    }
+    .company-hours {
+        margin-bottom: 10px;
+        @include breakpoint(large) {
+            margin-bottom: 32px;
+        }
+    }
+    .company-location {
+        margin-bottom: 30px;
+        @include breakpoint(large) {
+            margin-bottom: 0;
+        }
+    }
+    .stay-connected {
+        background-color: $navy;
+        text-align: center;
+        padding-top: 45px;
+        padding-bottom: 0;
+        @include breakpoint(large) {
+            background-color: transparent;
+            text-align: right;
+        }
+        .widget .gform_widget {
+            @include breakpoint(large) {
+                float: right;
+            }
+        }
+        @include breakpoint(medium) {
+            .gform_wrapper {
+                margin: 0 auto;
+                width: 309px;
+            }
+            .gform_body,
+            .gform_footer {
+                display: inline-block;
+                clear: none;
+                float: left;
+            }
+            .gform_body {
+                width: 201px;
+            }
+            .gform_footer {
+                max-width: 108px;
+            }
+            .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+                height: 45px;
+                float: right;
+                max-width: 201px;
+                margin: 0;
+            }
+            .gform_wrapper .gform_footer {
+                margin: 0;
+                padding-top: 0 !important;
+            }
+        }
+        .gform_wrapper ul.gform_fields li.gfield {
+            padding-right: 0;
+            margin-top: 0;
+            padding-top: 0;
+        }
+        .gform_wrapper .top_label .gfield_label {
+            display: none;
+        }
+        .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+            height: 45px;
+            text-align: center;
+            border: $red solid 1px;
+            border-style: inset;
+            font-family: $jura!important;
+            font-weight: 700;
+            color: #C6C6C6 !important;
+            font-size: 11px !important;
+            line-height: 13px !important;
+        }
+        .gform_wrapper .top_label div.ginput_container {
+            margin-top: 0 !important;
+        }
+        .gform_wrapper .gform_footer input.button,
+        .gform_wrapper .gform_footer input[type=submit] {
+            width: 108px !important;
+            height: 45px;
+            background: $red;
+            border: solid 1px $red;
+            border-radius: 0;
+            color: white;
+            font-family: $jura!important;
+            font-weight: 700;
+            font-size: 11px !important;
+            line-height: 13px !important;
+            margin-right: 0;
+            transition: $transition;
+            &:hover {
+                background-color: white;
+                color: $red;
+            }
+        }
+        h3 {
+            margin-right: 26px;
+            margin-bottom: 10px;
+            font-size: 32px;
+            @include breakpoint(large) {
+                margin-right: 26px;
+            }
+        }
+    }
+    h3 {
+        font-family: $BebasBold;
+        color: $red;
+        display: inline-block;
+        font-size: 25px;
+        letter-spacing: 1.3px;
+        line-height: 30px;
+        margin-bottom: 20px;
+        @include breakpoint(large) {
+            font-size: 32px;
+            margin-bottom: 0px;
+        }
+    }
+    .account-specialist {
+        margin-bottom: 6px;
+    }
+}
+
+.stay-connected .social-icons {
+    display: inline-block;
+    margin-bottom: 10px;
+    li a {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: $red;
+        transition: $transition;
+        svg {
+            height: 24px;
+            width: 24px;
+            fill: white;
+        }
+        &:hover {
+            background-color: white;
+            svg {
+                fill: $red;
+            }
+        }
+    }
+}
+
+.footer-logo {
+    padding: 1px 0;
+    img {
+        margin: 30px auto 5px;
+    }
+}
+
+.site-footer {
+    .subfooter {
+        background-color: $navy;
+        padding: 9px 0;
+        text-transform: uppercase;
+        a {
+            color: white;
+        }
+        p {
+            color: white;
+            font-family: $jura;
+            font-weight: 700;
+            font-size: 13px;
+            line-height: 15px;
+            text-align: center;
+        }
+    }
+}

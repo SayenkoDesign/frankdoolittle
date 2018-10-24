@@ -1,0 +1,33 @@
+.wishlist-suggested-products-slider {
+   @extend .suggested-products-slider ;
+   .slide {
+      border: solid transparent 3px;
+      &:hover {
+         border: solid black 3px;
+      }
+   }
+}
+
+.wishlist-intro {
+   p {
+      font-family: $jura;
+      font-weight: 600;
+      font-size: 16px;
+      color: #2B2B2B;
+      letter-spacing: 0;
+      line-height: 23px;
+   }
+}
+.alert-message {
+   color: white!important;
+   background-color: #f84a4e;
+   font-family: $jura;
+   font-weight: 600;
+   font-size: 15px;
+   color: #FFFFFF;
+   letter-spacing: 0;
+   margin-bottom: 30px;
+}
+.package-title {
+   margin-top: 30px;
+}

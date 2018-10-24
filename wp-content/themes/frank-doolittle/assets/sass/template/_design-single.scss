@@ -1,0 +1,74 @@
+.single-doolittle_design .suggested-products {
+
+    margin-bottom: $global-margin;
+    
+    overflow: hidden;
+    
+    .slider {
+        margin-top: 20px;
+        
+        padding: 0 40px;   
+    }
+    
+    .slick-list {
+        margin: 0  ($global-padding * -1);  
+    }
+    
+    .slick-slide {
+        
+        padding: 0 $global-padding;
+        
+        .slide {
+            
+            position: relative;
+            width: 100%;
+            height: 150px;
+            
+
+            p {
+                line-height: 15px;
+                text-align: center;
+                
+                &.title {
+                   font-family: $jura;
+                   font-weight: 700;
+                   font-size: 11px; 
+                   margin-bottom: 5px;
+                }
+                
+                &.price {
+                    font-size: 14px;
+                    margin-bottom: 0;
+                }
+            }
+            
+            a {
+                text-decoration: none!important;
+            }
+            
+            
+        }
+    }
+    .slick-arrow {
+        width: 20px;
+        height: 20px;
+        &:before {
+            display: none;
+        }
+        
+        &:hover {
+            svg path {
+                fill: $red;   
+            }   
+        }
+    }
+    .slick-prev {
+        left: 0px;
+        transform: rotate(-90deg);
+    }
+    
+    .slick-next {
+        right: 0px;
+        transform: rotate(90deg);
+    }
+}

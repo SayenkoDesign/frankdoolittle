@@ -1,0 +1,49 @@
+.modal-contact {
+
+    .modal-content {
+       background: #fff;
+       padding: 0 50px;
+       text-align: center;
+       @include breakpoint(large up) {
+         text-align: left;
+       }
+       .about {
+          padding: 30px 0 20px;
+       }
+       .contact-info {
+          padding: 0;
+          text-align: center;
+          @include breakpoint(large up) {
+            text-align: left;
+         }
+          p:nth-child(1){
+             margin-bottom: 20px;
+             @include breakpoint(large up) {
+              margin-bottom: 0px;
+            }
+           }
+          .columns {
+             padding: 0;
+          }
+       }
+       p {
+          font-family: $jura!important;
+          font-weight: 500;
+          font-size: 15px;
+          line-height: 17px;
+       }
+    }
+    .modal-form {
+
+       padding: 0!important;
+
+       .gform_wrapper ul li.gfield {
+           margin-top: 0!important;
+       }
+       
+       .gform_wrapper .top_label div.ginput_container {
+            margin-top: 0!important;
+        }
+    }
+
+}

@@ -1,0 +1,156 @@
+// Modal Slideshow
+
+.modal-slideshow.reveal {
+    
+    background: $dark-gray!important; 
+    
+    .modal-title {
+        margin: 30px auto 20px;
+        width: 100%;
+        max-width: 800px;
+        position: relative;
+        
+        h2 {
+            margin: 0;   
+        }
+        
+        p {
+            line-height: 1;   
+        }
+        
+        * {
+            color: #ffffff;   
+        }
+                
+       
+        .buttons {
+            
+            margin: 0;
+            
+            a {
+                display: inline-block;
+                width: auto; 
+                font-size: 14px;
+                padding: 0 8px;
+                min-width: 0;
+                margin: 0; 
+                border: none;
+            }
+        }
+        
+        @include breakpoint(large) {
+            
+            padding-right: 350px;
+            
+            .buttons {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+            
+        }
+    }
+    
+    .close-button {
+        color: $light-gray;
+        font-size: 60px;
+        font-family: $jura;
+        font-weight: 700;
+        position: absolute;
+        right: 15px;
+        top: 0px;
+    }
+    
+    .modal-content {
+        background: transparent;   
+    }
+    
+    .slideshow {
+    
+        margin: 0 auto;
+        width: 100%;
+        max-width: 800px;
+        padding: 0 36px;
+        
+        @include breakpoint(large) {
+            padding: 0;
+        }
+     
+        .slider {
+            span {
+                display: block;
+                width: 100%;
+                padding-top: 86%; 
+                background-size: cover;
+                background-position: center center;
+            }
+            
+            img {
+                margin: 0 auto;   
+            }
+            
+            .slick-arrow {
+                width: 24px;
+                height: 40px;
+                
+                @include breakpoint(large) {
+                    width: 36px;
+                    height: 60px;
+                }
+                
+                &:before {
+                    display: none;   
+                }
+            }
+            
+            
+            .slick-prev {
+                 left: -30px;
+            }
+            
+            .slick-next {
+                right: -30px;
+                
+            }
+            
+            
+            @include breakpoint(large) {
+                .slick-prev {
+                     left: -60px;
+                }
+                
+                .slick-next {
+                    right: -60px;
+                    
+                }
+            }
+            
+            
+        }
+        
+    }
+    
+    .share-icons {
+        max-width: 800px;
+        text-align: right;
+        
+        li:first-child {
+            padding-left: 100px;
+            position: relative;
+            &:before {
+                content: 'Share This: ';   
+                color: #fff;
+                text-align: right;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                display: inline-block;
+            }
+        }
+        
+        a {
+            border: 2px solid #fff;   
+        }
+    }
+}

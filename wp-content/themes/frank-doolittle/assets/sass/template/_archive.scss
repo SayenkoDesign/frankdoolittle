@@ -1,0 +1,33 @@
+
+.archive-title {
+    margin-bottom: $global-margin;   
+}
+
+.filters {
+    
+    > div {
+        display: inline-block;
+        padding: $global-padding;   
+    }
+ 
+    select {
+        -webkit-appearance: none;
+        -webkit-border-radius: 0px;
+        background-image: url("data:image/svg+xml;utf8,<svg width='16' height='9' viewBox='0 0 16 9' xmlns='http://www.w3.org/2000/svg'><title>Fill 4</title><path d='M.758.75C.588.91.5 1.13.5 1.343c0 .212.09.433.258.594l6.617 6.316c.17.16.392.246.624.246.23 0 .453-.085.622-.246l6.617-6.316c.347-.33.347-.858 0-1.19-.348-.33-.9-.33-1.247 0L8 6.47 2.004.75C1.658.427 1.097.427.758.75z' fill='#252b33' fill-rule='evenodd'/></svg>");
+        background-position: 96% 50%;
+        background-repeat: no-repeat;
+        
+        padding: 10px 25px 10px 10px;	
+        
+    }
+    
+}
+
+.load-more {
+    margin: 50px auto;
+    font-family: $jura;
+    font-weight: 700;
+    font-size: 20px;
+    color: #F53336;
+    letter-spacing: 0;
+}

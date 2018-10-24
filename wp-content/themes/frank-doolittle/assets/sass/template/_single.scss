@@ -1,0 +1,452 @@
+
+.single-product,
+.single-doolittle_design {
+    
+    .content-area {
+        padding-bottom: 30px;    
+    }
+    
+    .entry-title {
+        
+        margin-bottom: $global-margin;
+        position: relative;
+        padding-right: 60px + $global-padding;
+        
+        h1 {
+           margin-bottom: 0; 
+        }
+        
+        .part-number {
+            font-size: 18px;
+            line-height: 15px;
+            font-family: $jura;
+            font-weight: 700;
+            text-transform: uppercase;   
+        }
+        
+        .brand-logo {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 60px;
+        }
+    }
+    
+    .entry-content {
+     
+        .description {
+            margin-bottom: $global-margin;   
+        }
+        
+    }
+      
+    .buttons {
+        margin-top: 20px;
+        margin-bottom: $global-margin; 
+        
+        @include breakpoint(large) {
+            a {
+                max-width: 100%;   
+            }
+        }
+    }
+    
+}
+
+
+.single-product,
+.single-doolittle_design {
+    .photos {
+        
+        margin-bottom: $global-margin;
+        
+        .enlarge {
+            display: none;   
+         }
+         
+         @include breakpoint(large) {
+            margin: 0;
+            position: relative;
+            
+             
+            .enlarge {
+                display: block;
+                width: 64px;
+                height: 64px;
+                background: $dark-gray;  
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                
+                a {
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    
+                    svg {
+                         position: absolute;
+                         top: 50%;
+                         left: 50%;
+                         transform: translate(-50%,-50%);  
+                    }
+                }
+            }
+            
+            .featured-image {
+                min-height: 620px;
+                margin-right: 100px + $global-padding;  
+            }
+        }  
+        
+        .featured-image {
+            
+            margin-bottom: $global-margin;
+            
+            .slider {
+                padding: 0 30px;   
+            }
+            
+            .thumbnails .slick-slide > div {
+                padding: 2px;
+                
+                img {
+                    border: 1px solid $gray;   
+                }
+            }
+            
+            .slick-arrow {
+                width: 20px;
+                height: 20px;
+                &:before {
+                    display: none;
+                }
+                
+                &:hover {
+                    svg path {
+                        fill: $red;   
+                    }   
+                }
+            }
+            .slick-prev {
+                left: 0px;
+                margin-top: -10px;
+                transform: rotate(-90deg);
+            }
+            
+            .slick-next {
+                right: 0px;
+                margin-top: -10px;
+                transform: rotate(90deg);
+            }
+        
+            .images {
+                
+                width: 100%;
+                
+                .slick-slide,
+                .slick-slide div {
+                    height: 500px;   
+                    
+                    img {
+                        width: auto;
+                        height: auto; 
+                        max-height: 500px;
+                        display: block;
+                        margin: 0 auto;
+                        position: relative;
+                        top: 50%;
+                        transform: translateY(-50%);  
+                    }
+                }
+                                
+                div {
+                    display: block;
+                    span {
+                        display: block;
+                        width: 100%;
+                        padding-top: 86%;
+                        background-size: cover;
+                        background-position: center center;
+                        border: 1px solid $gray;
+                    }
+                }
+                .slick-dots {
+                    @include list-reset;
+                    position: relative;
+                    bottom: auto;
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: flex-end;
+                    margin: 4px -4px;
+                    width: calc(100% + 8px);
+                    li {
+                        display: block;
+                        margin: 0;
+                        padding: 4px 4px;
+                        width: 100%;
+                        flex: 0 0 calc(100% / 6);
+                        max-width: calc(100% / 6);
+                        height: auto;
+                        span {
+                            display: block;
+                            width: 100%;
+                            padding-top: 100%;
+                            background-size: cover;
+                            border: 1px solid $gray;
+                        }
+                        
+                        &.slick-active {
+                            span {
+                                box-shadow: 0 2px 4px 0px rgba(0,0,0,0.5);   
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+     
+}
+
+
+
+.single-doolittle_design .related-designs {
+    
+    @include breakpoint(large) {
+        position: absolute;
+        top: -4px;
+        right: 0;
+        width: 100px;
+        margin-bottom: 30px;
+    }
+    h4 {
+        line-height: 1.1;
+        @include breakpoint(large) {
+            text-align: center;
+            margin-bottom: 22px;
+        }
+    }
+    
+    .slick-slide a {
+        border: 1px solid $gray;
+        margin-bottom: 2px!important;
+    }
+}
+
+.single-product .related-products {
+     @include breakpoint(large) {
+        position: absolute;
+        top: -25px;
+        right: 0;
+        width: 100px;
+        margin-bottom: 30px;
+    }
+    h4 {
+        line-height: 1.1;
+        @include breakpoint(large) {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.single-doolittle_design .related-designs,
+.single-product .related-products {
+    
+   
+    .slider {
+        padding: 20px 0 0 0;
+        margin: 0 -4px;
+        @include breakpoint(large) {
+            padding: 0;
+            margin: 0;
+        }
+    }
+    .slick-slide {
+        margin-bottom: 5px;
+        text-align: center;
+        padding: 0 4px;
+        
+        
+        @include breakpoint(large) {
+            padding: 0;
+        }
+        //.slide {
+            a {
+                display: block;
+                text-decoration: none!important;
+                margin-bottom: 10px;
+                
+            }
+            
+            p {
+                line-height: 15px;
+                
+                &.title {
+                   font-family: $jura;
+                   font-weight: 700;
+                   font-size: 11px; 
+                   margin-top: 5px;
+                   margin-bottom: 5px;
+                }
+                
+                &.price {
+                    font-size: 14px;
+                    margin-bottom: 0;
+                }
+            }
+       // }
+    }
+    .slick-arrow {
+        width: 20px;
+        height: 20px;
+        @include breakpoint(large) {
+            left: 50%;
+            right: auto;
+            transform: translateX(-50%);
+            width: 36px;
+            height: 22px;
+            position: relative;
+            top: auto!important;
+            margin: 10px 0 20px;
+        }
+        &:before {
+            display: none;
+        }
+        
+        &:hover {
+            svg path {
+                fill: $red;   
+            }   
+        }
+        
+    }
+    .slick-prev {
+        transform: rotate(90deg);
+        top: -25px;
+        right: 0;
+        left: auto;
+        @include breakpoint(large) {
+            bottom: 0;
+            right: auto;
+            top: auto;
+            transform: translateX(-50%) rotate(180deg);
+            position: relative;
+        }
+    }
+    .slick-next {
+        top: -25px;
+        right: 35px;
+        transform: rotate(-90deg);
+        @include breakpoint(large) {
+            top: 15px;
+            right: auto;
+            bottom: auto;
+        }
+    }
+}
+
+
+.single-doolittle_design,
+.single-product {
+
+    .slideshow {
+    
+        margin: 0 auto;
+        width: 100%;
+        max-width: 800px;
+     
+        .photos {
+            span {
+                display: block;
+                width: 100%;
+                padding-top: 86%; 
+                background-size: cover;
+            }
+            
+            .slick-arrow {
+                width: 36px;
+                height: 60px;
+                
+                &:before {
+                    display: none;   
+                }
+            }
+            
+            .slick-prev {
+                 left: -60px;
+            }
+            
+            .slick-next {
+                right: -60px;
+                
+            }
+        }
+        
+    }
+    
+}
+
+
+
+.accordion-title {
+  font-family: BebasNeue;
+  font-size: 22px;
+  color: #1E1E1E;
+  letter-spacing: 0;
+  line-height: 22px;
+  margin-bottom: 13px;
+}
+.accordion-content {
+  
+  padding-bottom: 30px;
+  
+  .description {
+     font-family: $jura;
+     font-weight: 700;
+     font-size: 13px;
+     color: #1E1E1E;
+     letter-spacing: 0;
+     line-height: 15px;
+     margin-bottom: 21px;
+  }
+}
+
+
+.accordion-item {
+   .accordion-title {
+      position: relative;
+      display: block;
+      width: 100%;
+      &:after {
+         content: " ";
+         background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 0h31v30H0z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(-7 -6)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><g fill="#1E1E1E" mask="url(#b)"><path d="M-25 16.448v-3.33h16.333v3.33M17.506 12.918h6.27v3.576h-6.27v6.38h-3.33v-6.38H7.893v-3.576h6.285v-6.38h3.33"/></g></g></svg>');
+         background-size: contain;
+         background-position: center center;
+         position: absolute;
+         height: 17px;
+         background-repeat: no-repeat;
+         width: 17px;
+         right: 0;
+         top: 8px;
+      }
+   }
+}
+.accordion-item.is-active {
+   .accordion-title {
+      &:after {
+         content: " ";
+         background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="4" viewBox="0 0 17 4" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 0h31v30H0z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(-8 -13)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><g fill="#1E1E1E" mask="url(#b)"><path d="M8 16.448v-3.33h16.333v3.33M50.506 12.918h6.27v3.576h-6.27v6.38h-3.33v-6.38h-6.284v-3.576h6.285v-6.38h3.33"/></g></g></svg>');
+      }
+   }
+}
+
+.accordion-title {
+   font-family: $jocky;
+   font-weight: 400;
+   font-size: 20px;
+   line-height: 28px;
+   text-transform: uppercase;
+}

@@ -1,0 +1,106 @@
+
+.modal-sign-in {
+    
+    .login-remember {
+        margin: 0 -5px;
+        text-align: center;
+        
+        @include breakpoint(medium) {
+            margin: 0 -10px;
+        }
+        
+        margin-bottom: 24px!important;
+        
+        input {
+            margin-right: 5px;  
+            position: relative;
+            top: -1px; 
+        }
+        
+        >  div {
+          display: inline-block;  
+          padding: 5px;
+          
+          @include breakpoint(medium) {
+              display: inline-block;  
+              padding: 5px 10px;
+          }
+          
+        }
+    }
+}
+
+
+/*.sign-in {
+   .modal-contact {
+      padding: 0;
+   }
+   .modal-form {
+    padding: 0;
+ }
+}
+.login-username,
+.login-password {
+   label {
+      display: none;
+   }
+   input {
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    border: $navy solid 1px;
+    color: #1e1e1e;
+    font-family: Jura-Medium;
+    font-size: 15px;
+    padding-left: 15px;
+   }
+}
+
+.login-remember label {
+    display: block;   
+}
+.login-remember,
+.login-submit {
+   margin-top: 23px;
+   @include breakpoint(medium) {
+      width: 52%;
+      float: left;
+      display: inline-block;
+   }
+   width: 100%;
+   float: none;
+   display: block;
+}
+.login-submit {
+   width: 100%;
+   text-align: center;
+   @include breakpoint(medium up) {
+      width: 48%;
+   }
+   .btn-primary {
+      padding: 7px 8px;
+      background-color: $navy;
+      color: white;
+      font-size: 16px;
+      float: none;
+      display: block;
+      min-width: 0;
+      max-width: 118px;
+      margin: 0 auto;
+      @include breakpoint(medium up) {
+         max-width: 127px;
+         float: right;
+         display: inline-block;
+      }
+      &:hover {
+         background-color: white;
+         color: $navy;
+         border: solid 2px $navy;
+      }
+   }
+}
+.lost-password {
+   font-size: 15px;
+   color: $red;
+}
+*/

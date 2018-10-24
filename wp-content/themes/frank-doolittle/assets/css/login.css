@@ -1,0 +1,105 @@
+/*Dashboard login screen*/
+
+@font-face {
+    font-family: BebasNeue;
+    src: url(../fonts/BebasNeue.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: BebasNeueBold;
+    src: url(../fonts/BebasNeueBold.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: JockeyOne-Regular;
+    src: url(../fonts/JockeyOne-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: Jura-Bold;
+    src: url(../fonts/Jura-Bold.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: Jura-Medium;
+    src: url(../fonts/Jura-Medium.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: Jura-Regular;
+    src: url(../fonts/Jura-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: Jura-SemiBold;
+    src: url(../fonts/Jura-SemiBold.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background: #e7e7e7;   
+    font-family: Jura-SemiBold;
+}
+
+*:focus {
+    outline: none!important;   
+}
+
+.login h1 a {
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
+    width: 249px;
+	height: 169px;
+	outline: none;
+ }
+ 
+ .login form .input, .login form input[type=checkbox], .login input[type=text] {
+    background: #fff;
+    border-radius: 0;
+    box-shadow: none;
+    text-shadow: none;
+    font-family: Jura-Regular;
+ }
+ 
+ 
+ .login #login_error, .login .message {
+    border-left: 4px solid #063342;
+    padding: 12px;
+    margin-left: 0;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: none;
+}
+ 
+ .login .button-primary {
+    padding: 9px 8px;
+    text-align: center;
+    background: #063342;
+    border: 3px solid #063342;
+    box-shadow: none;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: none;
+    border-radius: 0;
+    height: auto!important;
+    line-height: inherit;
+}
+
+.login .button-primary:hover,
+.login .button-primary:focus,
+.login .button-primary:active {
+    background-color: #fff!important;
+    color: #063342;
+    outline: none;
+    box-shadow: none;
+    margin-top: 0;
+    top: 0;
+}

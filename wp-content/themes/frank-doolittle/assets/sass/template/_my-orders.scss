@@ -1,0 +1,101 @@
+
+
+.post-type-archive-shop_order {
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      font-family: $jura;
+      font-weight: 600;
+      font-size: 16px;
+      color: #063342;
+      letter-spacing: 0;
+      line-height: 1;
+   }
+   th {
+      text-align: left;
+      font-family: BebasNeueBold;
+      font-size: 20px;
+      line-height: 1;
+      color: #252B33;
+      letter-spacing: 1.04px;
+      padding: 12px 10px 8px;
+      @include breakpoint(large up) {
+         padding-left: 35px;
+      }
+   }
+   td {
+      padding: 22px 10px 22px;
+      @include breakpoint(large up) {
+         padding-left: 35px;
+      }
+   }
+   thead {
+      background-color: #D7D5D5;
+   }
+   tbody {
+      tr {
+         border-top: #979797 solid 1px;
+          &:nth-child(even) {
+             background: #EFF3F1;
+         }
+         
+         &:hover {
+            cursor: pointer;
+            background: rgba(#666, .1);   
+         }
+         
+      }
+   }
+    
+    table {
+        
+        span {
+            display: inline-block;
+            padding-right: 40px;
+            position: relative;  
+            cursor: pointer; 
+        }
+ 
+        th[data-sort] {
+             
+            span:after {
+                content: "\f0ec";
+                font-family: 'FontAwesome'; 
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1;
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%) rotate(-90deg);
+                margin-top: -1px;
+                display: none;
+            }
+            
+            &:hover span:after {
+                display: block;
+            }
+        }
+        
+        th.sorting-asc span {
+            &:after {
+                content: "\f160";
+                transform: translateY(-50%);
+                display: block;
+            }
+        }
+        
+        th.sorting-desc span {
+            &:after {
+                content:"\f161";
+                transform: translateY(-50%);
+                display: block;
+            }
+        }
+        
+    }
+
+}

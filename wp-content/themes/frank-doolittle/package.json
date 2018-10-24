@@ -1,0 +1,56 @@
+{
+  "name": "_s",
+  "version": "1.0.0",
+  "description": "A theme boilerplate based on Underscores from Automattic.",
+  "main": "Gulpfile.js",
+  "dependencies": {
+    "foundation-sites": "6.3.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "latest",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "latest",
+    "browser-sync": "latest",
+    "css-mqpacker": "latest",
+    "del": "latest",
+    "eslint-config-wordpress": "latest",
+    "glob": "latest",
+    "gulp": "latest",
+    "gulp-babel": "latest",
+    "gulp-bower-normalize": "latest",
+    "gulp-cheerio": "latest",
+    "gulp-concat": "latest",
+    "gulp-cssimport": "latest",
+    "gulp-cssnano": "latest",
+    "gulp-eslint": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-notify": "latest",
+    "gulp-plumber": "latest",
+    "gulp-postcss": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "latest",
+    "gulp-sass-lint": "latest",
+    "gulp-sort": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-svgmin": "latest",
+    "gulp-svgstore": "latest",
+    "gulp-uglify": "latest",
+    "gulp-util": "latest",
+    "gulp-wp-pot": "latest",
+    "gulp.spritesmith": "latest",
+    "gulp.spritesmith-multi": "latest"
+  },
+  "scripts": {
+    "test": "echo \"No test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamcanadian1973/_s.git"
+  },
+  "keywords": [
+    "theme"
+  ],
+  "author": "Kyle Rumble",
+  "license": "GPL-3.0"
+}

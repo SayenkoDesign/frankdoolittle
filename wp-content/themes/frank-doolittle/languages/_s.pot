@@ -1,0 +1,224 @@
+# Copyright (C) 2018 _s
+# This file is distributed under the same license as the _s package.
+msgid ""
+msgstr ""
+"Project-Id-Version: _s\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: comments.php:31
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:40, comments.php:61
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:43, comments.php:64
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:44, comments.php:65
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:77
+msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:72
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:118
+msgid "Primary"
+msgstr ""
+
+#: functions.php:119
+msgid "Product Archive"
+msgstr ""
+
+#: functions.php:120
+msgid "Header"
+msgstr ""
+
+#: functions.php:121
+msgid "Footer Newsletter"
+msgstr ""
+
+#: functions.php:129
+msgid "Widget area for %s"
+msgstr ""
+
+#: header.php:33
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:46
+msgid "Hello"
+msgstr ""
+
+#: header.php:49, page-templates/my-account.php:2
+msgid "My Account"
+msgstr ""
+
+#: home.php:65
+msgid "Previous Post"
+msgstr ""
+
+#: home.php:68
+msgid "Next Post"
+msgstr ""
+
+#: search.php:35
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:13
+msgctxt "placeholder"
+msgid "Search products and item #…"
+msgstr ""
+
+#: searchform.php:17
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#: page-templates/blank.php:2
+msgid "Blank"
+msgstr ""
+
+#: page-templates/contact.php:2
+msgid "Contact"
+msgstr ""
+
+#: page-templates/contact.php:32
+msgid "Veritas Legal Services"
+msgstr ""
+
+#: page-templates/faq.php:2
+msgid "FAQ"
+msgstr ""
+
+#: page-templates/order-post.php:2
+msgid "Order Details"
+msgstr ""
+
+#: page-templates/page-builder.php:2
+msgid "Page Builder"
+msgstr ""
+
+#: page-templates/quote-step1.php:2
+msgid "Quote Step 1"
+msgstr ""
+
+#: page-templates/quote-step3.php:2
+msgid "Quote Step 3"
+msgstr ""
+
+#: page-templates/quote-step4.php:2
+msgid "Quote Step 4"
+msgstr ""
+
+#: template-parts/content-none.php:13
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:26
+msgid "Sorry no results found."
+msgstr ""
+
+#: template-parts/content-page.php:20, template-parts/content-single.php:24, template-parts/content.php:28
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/content-page.php:31, lib/functions/template-tags.php:118
+msgid "Edit %s"
+msgstr ""
+
+#: template-parts/content-post.php:53
+msgid "Share This:"
+msgstr ""
+
+#: template-parts/content.php:21
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: lib/functions/members.php:39
+msgid "Email Address"
+msgstr ""
+
+#: lib/functions/template-tags.php:77
+msgctxt "post date"
+msgid "%s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: lib/functions/template-tags.php:97, lib/functions/template-tags.php:103
+msgid ", "
+msgstr ""
+
+#: lib/functions/template-tags.php:99
+msgid "Posted in %1$s"
+msgstr ""
+
+#: lib/functions/template-tags.php:105
+msgid "Tagged %1$s"
+msgstr ""
+
+#: lib/functions/template-tags.php:111
+msgid "Leave a comment"
+msgstr ""
+
+#: lib/functions/template-tags.php:111
+msgid "1 Comment"
+msgstr ""
+
+#: lib/functions/template-tags.php:111
+msgid "% Comments"
+msgstr ""
+
+#: lib/post-types/cpt-designs.php:113
+msgid "Design Category"
+msgstr ""
+
+#: lib/post-types/cpt-designs.php:114
+msgid "Design Categories"
+msgstr ""
+
+#: lib/post-types/cpt-designs.php:139, lib/post-types/cpt-designs.php:140, lib/post-types/cpt-designs.php:170, lib/post-types/cpt-designs.php:171, lib/post-types/cpt-products.php:153, lib/post-types/cpt-products.php:154, lib/post-types/cpt-products.php:185, lib/post-types/cpt-products.php:186
+msgstr ""
+
+#: lib/post-types/cpt-products.php:66
+msgid "Vendor"
+msgstr ""
+
+#: lib/post-types/cpt-products.php:67
+msgid "Vendors"
+msgstr ""
+
+#: lib/post-types/cpt-products.php:102
+msgid "Show All %s"
+msgstr ""
+
+#: lib/post-types/cpt-products.php:121, lib/post-types/cpt-products.php:122
+msgid "Product Composition"
+msgstr ""

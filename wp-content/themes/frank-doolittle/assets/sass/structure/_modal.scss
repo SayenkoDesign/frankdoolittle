@@ -1,0 +1,154 @@
+// Modals
+
+
+
+// fix reveal overflow, we don't want it hidden
+ body.is-reveal-open {
+    overflow-y: auto!important;
+}
+
+.reveal:focus{
+    outline: none;
+}
+
+.reveal-overlay {
+    background-color: rgba($gray,.7);
+}
+
+.reveal {
+
+    background: transparent!important;
+    border: none;
+    padding: 0;
+    
+    .close-button {
+        cursor: pointer;   
+    }
+    
+    .modal-content {
+        background: #fff;   
+        
+        .grid {
+            
+        }
+    }
+    
+    .modal-header {
+       background-color: $red;
+       padding: 20px 0;
+       .close-button {
+              color: white;
+              font-size: 30px;
+              line-height: 1;
+              font-family: times;
+              font-weight: 900;
+              position: absolute;
+              right: 10px;
+              top: 0px;
+              color: #f8d8e3;
+       }
+       h3 {
+         text-transform: uppercase;
+         text-align: center;
+         margin: 0 auto;
+       }
+       h2 {
+         color: white;
+         font-family: $BebasNeue;
+         font-size: 28px;
+         text-transform: uppercase;
+         text-align: center;
+         margin: 0 auto;
+         a {
+            color: white;
+         }
+       }
+    }
+
+	.modal-description {
+       text-align: center;
+       padding: $global-padding 0 ($global-padding * 2);
+       
+       @include breakpoint(large up) {
+         text-align: left;
+       }
+
+       p {
+          font-family: $jura!important;
+          font-weight: 500;
+          font-size: 15px;
+       }
+    }
+
+
+
+}
+
+
+.modal-content {
+ 	
+    background-color: #fff;
+    
+    .modal-form {
+        padding: 20px 30px;
+        
+        @include breakpoint(large) {
+            padding: 20px 100px;
+        }
+     }
+
+    form {
+        
+        input:not([type=checkbox]):not([type=radio]):not([type=submit]),
+        select,
+        textarea {
+            line-height: 17px!important;
+            font-family: $jura!important;
+            font-weight: 500;
+            font-size: 15px!important;
+            padding-left: 10px!important;
+            height: 45px!important;
+            border: 1px solid #252B33;
+            color: #1E1E1E!important;   
+        }
+        
+    
+        textarea {
+            height: auto!important;
+        }
+        
+        
+        select {
+            -webkit-appearance: none;
+            -webkit-border-radius: 0px;
+            background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='24' height='24' viewBox='0 0 24 24'><path fill='#1E1E1E' d='M7.406 7.828l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'></path></svg>");
+            background-position: 100% 50%;
+            background-repeat: no-repeat;	
+            
+        } 
+        
+        
+        input.button,
+        input[type=submit] {
+          background-color: $navy;
+          color: white;
+          width: 280px!important;
+          height: 54px;
+          line-height: 23px;
+          font-size: 20px!important;
+          text-transform: uppercase;
+          margin: 0 auto!important;
+          font-family: $jura;
+          font-weight: 700;
+          display: block!important;
+          border: solid $navy 3px;
+          transition: $transition;
+          cursor: pointer;
+           &:hover{
+             background-color: white;
+             color: $navy;
+          }
+        }  
+    }
+}
+

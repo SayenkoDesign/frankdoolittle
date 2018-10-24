@@ -1,0 +1,43 @@
+/*!
+Theme Name: Frank Doolittle Company
+Author: Sayenko Design
+Author URI: https://sayenkodesign.com.com
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: _s
+Tags: Foundation, sass, gulp
+
+_s is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+
+*/
+
+// Settings (allows us to override Foundation global settings)
+@import "settings/settings"; 
+
+// Foundation Sites
+@import 'foundation/index';
+
+// Utilities
+@import "utilities/index";
+
+// Base
+@import "base/index";
+
+// Motion UI
+@import "assets/bower_components/motion-ui/motion-ui";
+
+// Components
+@import "components/index";
+
+// Plugins (Gravity forms, Royal Slider etc...)
+@import "plugins/index";
+
+// Modules
+@import "modules/index";
+
+// Structure
+@import "structure/index";
+
+// Template
+@import	"template/index";

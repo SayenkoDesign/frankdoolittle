@@ -1,0 +1,68 @@
+// modal Quote
+
+.modal-quote.reveal {
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+     
+    .modal-content {
+        background: #fff;   
+        padding: 20px;
+        
+        @include breakpoint(large) {
+            padding: 20px 50px;
+        }
+    }
+    
+    .modal-description {
+        
+        .black {
+            background: $black;
+            color: #fff;
+            padding: 3px 6px;
+            margin-bottom: $global-margin;   
+        }
+    }
+    
+    h3 {
+      font-family: $jocky;
+      font-weight: 400;
+      font-size: 20px;
+      color: #1E1E1E;
+      letter-spacing: 0;
+      line-height: normal;
+      text-transform: uppercase;
+   }
+    
+    .grid-container {
+        
+        padding: $global-padding;
+        
+        .grid {
+            background: #ececec;
+            margin: 0 auto;
+            padding: $global-padding 0;
+        }
+
+    }
+
+    
+    .grid-container {
+         margin-bottom: $global-margin;   
+    }
+    
+    .add-quotes-to-quote {
+        margin-top: $global-margin;   
+    }
+    
+        
+    .grid:empty {
+        display: none;   
+    }
+    
+    .grid:not(:empty) + .notice {
+        display: none;   
+    }
+    
+    
+}

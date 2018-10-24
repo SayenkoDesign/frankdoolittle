@@ -1,0 +1,132 @@
+//  Settings (includes overrides for sass/foundation/settings.scss)
+//  -----------------------------
+//
+//  Table of Contents:
+//
+//   1. Global
+//   2. Breakpoints
+//   3. The Grid
+//   4. Base Typography
+//   5. Off Canvas Menu
+
+
+// 1. Global
+// ---------
+
+$global-font-size: 100%;
+$global-width: 1190px;
+$global-lineheight: 1.4;
+
+$light-gray: #e6e6e6;
+$gray: #666666;
+$medium-gray: #cacaca;
+$dark-gray: #1E1E1E;
+$black: #000;
+$white: #ffffff;
+$navy: #063342;
+$red: #F53336;
+
+// Custom fonts
+
+$BebasNeue: "BebasNeue";
+$BebasBold: "BebasNeueBold";
+
+$jura: 'Jura', sans-serif;
+
+$jocky: 'Jockey One', sans-serif;
+
+$transition: ease all 0.3s;
+
+$body-background: #fefefe;
+$body-font-color: #2B2B2B;
+$body-font-family: $jura;
+
+$global-margin: 30px;
+$global-padding: 10px;
+$global-weight-normal: normal;
+$global-weight-bold: 700;
+$global-radius: 0;
+$global-text-direction: ltr;
+
+
+$tooltip-background-color: #eee;
+$has-tip-border-bottom: none;
+$tooltip-font-size: 12px;
+$tooltip-color: $body-font-color;
+
+
+// 2. Breakpoints
+// --------------
+
+$breakpoints: (
+  small: 0,
+  medium: 640px,
+  large: 980px,
+  xlarge: 1024px,
+  xxlarge: 1200px,
+  xxxlarge: 1440px
+);
+// must match $breakpoints
+$breakpoint-classes: (small medium large xlarge xxlarge xxxlarge);
+
+// 3. The Grid
+// -----------
+
+$grid-row-width: $global-width;
+$grid-column-count: 12; // usually 12
+$grid-column-gutter: (
+  small: 18px,
+  medium: 18px
+);
+$grid-column-align-edge: true;
+$block-grid-max: 8;
+
+
+// 4. Base Typography
+// ---------
+
+$header-font-family: 'BebasNeue';
+$header-font-weight: 400;
+$header-font-style: normal;
+
+/// Styles for headings at various screen sizes. Each key is a breakpoint, and each value is a map of heading styles.
+/// @type Map
+$header-styles: (
+  small: (
+    'h1': ('font-size': 32),
+    'h2': ('font-size': 32),
+    'h3': ('font-size': 27),
+    'h4': ('font-size': 20),
+    'h5': ('font-size': 16),
+    'h6': ('font-size': 16),
+  ),
+  medium: (
+    'h1': ('font-size': 43),
+    'h2': ('font-size': 32),
+    'h3': ('font-size': 27), // 27, 22
+    'h4': ('font-size': 22),
+    'h5': ('font-size': 16),
+    'h6': ('font-size': 16),
+  ),
+) !default;
+
+$header-color: $navy;
+$header-lineheight: 1.33;
+$header-margin-bottom: 30px;
+$small-font-size: 80%;
+$header-small-font-color: $navy;
+
+$paragraph-font-family: $body-font-family;
+$paragraph-font-style: normal;
+$paragraph-font-weight: 400;
+$paragraph-font-size: 16px;
+$paragraph-line-height: 1.43;
+$paragraph-font-color: $body-font-color;
+$paragraph-margin-bottom: 30px;
+
+$anchor-color: #333;
+$anchor-color-hover: scale-color(#333, $lightness: 20%);
+
+
+$offcanvas-size: 100%;
+$offcanvas-shadow: none;

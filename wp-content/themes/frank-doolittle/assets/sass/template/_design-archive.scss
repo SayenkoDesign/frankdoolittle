@@ -1,0 +1,205 @@
+.design-archive .how-it-works {
+    
+    margin-bottom: $global-margin;
+     
+    .border {
+        border: 0.25px solid #000000;
+        padding: 30px;   
+        position: relative;
+    }
+    
+    
+    h1 {
+        margin-bottom: 25px;
+        
+        @include breakpoint(large) {
+            font-size: 43px;
+        }
+    }
+    
+    .steps .column {
+        text-align: center;   
+        
+        .icon {
+            width: 100%;
+            height: 80px;   
+            position: relative;
+            margin-bottom: 24px;
+            
+            svg {
+                position: absolute;
+                left: 50%;
+                bottom: 0;  
+                transform: translateX(-50%); 
+                height: 82px;
+                width: auto;
+            }
+        }
+    }
+    
+    .step-arrow {
+        position: relative;
+        
+        &:after {
+            @include breakpoint(large up) {
+                content: '';
+            }
+            
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="13" height="22" viewBox="0 0 13 22"><path fill="#063342" fill-rule="nonzero" d="M0 19.425l2.724 2.496 10.04-10.96L2.725 0 0 2.495l7.755 8.465"/></svg>');
+            position: absolute;
+            right: 0;
+            width: 13px;
+            height: 22px;
+            top: 26px;
+        }
+    }
+    
+    
+    h4 {
+        font-family: $BebasNeue;
+        color: $red;
+        letter-spacing: 0;
+        line-height: 22px;
+        margin-bottom: 5px;
+    }
+    .close-button {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        color: #063342;
+        font-size: 28px;
+        
+        font-weight: 900;
+    }
+    p {
+        font-family: $jura;
+        font-weight: 600;
+        font-size: 16px;
+        color: #2B2B2B;
+        letter-spacing: 0;
+        line-height: 23px;
+        margin-bottom: 10px;
+        @include breakpoint(large up) {
+            margin-bottom: 0;
+        }
+    }
+    
+    .or {
+        margin: 0 auto 15px;
+        overflow: hidden;
+        
+        &:before,
+        &:after {
+         background-color: $dark-gray;
+         content: "";
+         display: inline-block;
+         height: 2px;
+         position: relative;
+         vertical-align: middle;
+         width: 50%;
+        }
+        &:before {
+         right: 0.5em;
+         margin-left: -50%;
+        }
+        &:after {
+         left: 0.5em;
+         margin-right: -50%;
+        }
+    }
+    
+    .call-us {
+        max-width: 90%;   
+        margin: 0 auto;
+        
+        svg {
+            width: 36px;
+            height: auto;
+        }
+    }
+    
+    .call {
+        font-family: BebasNeue;
+        font-size: 22px;
+        color: #F53336;
+        letter-spacing: 0;
+        line-height: 36px;
+        margin-top: 10px;
+        display: block;
+        text-align: center;
+        @include breakpoint(large up) {
+            text-align: left;
+        }
+        
+        > * {
+          vertical-align: middle;  
+        }
+        
+        svg {
+            display: inline-block;
+            margin-right: 10px;
+        }
+    }
+    .call-info {
+        text-align: center;
+        @include breakpoint(large up) {
+            text-align: left;
+        }
+    }
+}
+
+
+.design-archive,
+.design-search-results {
+    
+    
+    .design-filters {
+        
+        > div {
+            display: inline-block;   
+        }
+    }
+ 
+    section.designs {
+        
+        text-align: center;
+        margin-bottom: $global-margin;
+        
+        //overflow: hidden;
+        
+        .grid {
+            //margin-left: rem-calc(map-get($grid-column-gutter, medium) / 2 * -1);
+            //margin-right: rem-calc(map-get($grid-column-gutter, medium) / 2 * -1);  
+        }
+        
+        .image {
+            display: block;
+            padding-top: 86%;   
+            background-color: $gray;
+            background-size: cover;
+            background-position: center center;
+            border: 1px solid $gray;
+        }
+        
+        .entry-header {
+            display: block;
+            text-align: center;
+            margin-top: 15px;  
+            
+            h4 {
+                font-family: $jura;
+                font-weight: 700; 
+            }
+            
+            p {
+                font-size: 14px;
+                line-height: 17px;   
+            }
+        }
+    }
+    
+}
+
+ 
+
+

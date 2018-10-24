@@ -1,0 +1,27 @@
+.slick-slider {
+    visibility: hidden;
+    
+    &.slick-initialized {
+        visibility: visible;
+    }
+    
+    &.slick-vertical .slick-slide {
+        display: block;
+        height: auto;
+        border: none;
+    }
+    
+    .slick-arrow {
+        
+        position: absolute;
+        z-index: 2;
+        
+        &:before {
+            display: none;   
+        }
+        
+        svg {
+            max-height: 100%;   
+        }
+    }
+}

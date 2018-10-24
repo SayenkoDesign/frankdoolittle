@@ -1,0 +1,53 @@
+/* CSS Document */
+
+.template-contact {
+    
+    .site-main {
+        padding-top: 60px;   
+    }
+    
+    
+	.site-main .section {
+ 		
+		.entry-content > *:last-child {
+			margin-bottom: 0;	
+		}
+		
+		.columns {
+			
+			margin-bottom: 50px;
+			
+			&.large-4 {
+                
+                > * {
+                    text-align: center;
+                
+                    @media #{$large-up} {
+                        text-align: left;
+                    }     
+                }
+            }
+            
+            .gform_wrapper {
+                
+                padding-top: 30px;
+                 
+                .gform_title {
+                    color: $navy!important;
+                    margin-bottom: 20px!important;
+                    font-size: 30px!important;
+                    font-weight: 400!important;
+                }
+            }
+			
+			.gform_wrapper {
+				margin-top: -24px!important;
+				
+				.gform_footer {
+					text-align: center;	
+				}
+			}
+		}
+	}
+	
+}

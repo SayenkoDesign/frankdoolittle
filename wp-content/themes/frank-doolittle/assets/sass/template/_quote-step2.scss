@@ -1,0 +1,67 @@
+.quote-step-two.reveal {
+    width: 100%;
+    @include breakpoint(large up) {
+        width: 913px;
+    }
+    .about {
+        padding: 30px 25px 20px;
+    }
+    .step-two-title {
+        /* Step 2: */
+        font-family: BebasNeueBold;
+        font-size: 20px;
+        color: #252B33;
+        letter-spacing: 1.04px;
+        text-align: center;
+    }
+    .step-two-subtitle {
+        /* Add an item: */
+        font-family: BebasNeueBold;
+        font-size: 27px;
+        color: #FFFFFF;
+        letter-spacing: 1.6px;
+        text-align: center;
+    }
+    .close-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: red;
+        padding: 3px 5px;
+        height: 30px;
+        width: 30px;
+        span {
+            font-size: 30px;
+            color: #FAD0CE;
+            line-height: 26px;
+            padding: 0 0 0 4px;
+        }
+    }
+    .quotes-gray {
+        background-color: #ECECEC;
+        padding: 10px 0;
+    }
+    .step-2-button-row {
+        padding: 50px 0 80px;
+    }
+}
+
+.product-wrap {
+    position: relative;
+    margin-bottom: 30px;
+    .close-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: red;
+        padding: 3px 5px;
+        height: 30px;
+        width: 30px;
+        span {
+            font-size: 30px;
+            color: #FAD0CE;
+            line-height: 26px;
+            padding: 0 0 0 4px;
+        }
+    }
+}

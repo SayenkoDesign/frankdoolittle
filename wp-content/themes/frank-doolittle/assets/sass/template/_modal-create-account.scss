@@ -1,0 +1,11 @@
+
+.modal-create-account {
+    
+    .ginput_complex label {
+        @extend %screen-reader-text;
+    }
+    
+    .gform_wrapper .gfield_password_strength {
+        margin-top: 28px;   
+    }
+}

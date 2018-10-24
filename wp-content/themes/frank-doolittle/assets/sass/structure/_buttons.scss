@@ -1,0 +1,196 @@
+// Buttons
+
+@mixin button {
+    position: relative;
+    display: inline-block;
+    min-width: 242px;
+    padding: 12px 8px;
+    text-align: center;
+    font-family: $jura;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.5;
+    transition: ease all 0.3s;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none!important;
+    border: solid 3px transparent;
+    
+    &.disabled {
+        pointer-events: none;
+        cursor: default;
+    }
+    
+    svg {
+       position: absolute;
+       left: 10px;
+       top: 50%;
+       transform: translateY(-50%);
+    }
+}
+
+
+.btn-primary {
+    @include button;
+    background-color: $navy;
+    color: #fff;
+    border: solid 3px $navy;
+    
+    &:visited,
+    &:active,
+    &:focus {
+        color: #fff;
+    }
+    
+    &:hover{
+        background-color: white;
+        color: $navy;
+        border: solid $navy 3px;
+    }
+    
+    
+    
+    &.btn-inverted {
+       color: $navy;
+       background-color: transparent;
+       
+       &:visited,
+       &:focus,
+       &:active {
+            color: $navy;
+        }
+       
+       &:not(.disabled):hover {
+          border: solid 3px $navy;
+          background-color: $navy;
+          color: white;
+       }
+       
+       &.disabled {
+          background-color: $light-gray; 
+          border-color: $light-gray!important;
+          color: #fff!important;
+       }
+    }
+    
+    &.btn-white {
+       color: white;
+       background-color: transparent;
+       border-color: white;
+       
+       &:visited,
+       &:focus,
+       &:active {
+            color: #fff;
+        }
+       
+       &:hover {
+          color: $navy!important;
+          background-color: white!important;
+          border-color: #fff;
+       }
+    }
+
+}
+
+
+.btn-secondary {
+    @include button;
+    background-color: transparent;
+    border: solid 3px $red;
+    color: $red;
+    
+    &:visited,
+    &:focus,
+    &:active {
+        color: $red;
+    }
+    
+    &:hover{
+        background-color: $red;
+        color: white!important;
+        border: solid $red 3px;
+    }
+}
+
+.buttons {
+ 
+    a {
+        margin-bottom: 15px;   
+    }
+    
+}
+.add-to-favorites {
+   @include button;
+   
+   width: 100%;
+   max-width: 453px;
+   line-height: 45px;
+   padding: 0;
+   background-color: $red;
+   border-color: $red;
+   color: white!important;
+   
+   &:not(.disabled) {
+       
+       &:focus {
+            color: #fff!important;   
+       }
+       
+       &:hover {
+          background-color: white;
+          color: $red!important;
+          border-color: $red;
+          
+          svg path {
+            stroke: $red;  
+            transition: none; 
+          }
+       }
+   }
+   
+   &.disabled {
+      background-color: $light-gray; 
+      border-color: $light-gray!important;
+      color: #fff!important;
+   }
+}
+
+.add-to-quote {
+   @include button;
+   width: 100%;
+   max-width: 453px;
+   line-height: 45px;
+   padding: 0;
+   background-color: $navy;
+   color: white!important;
+   
+   &:not(.disabled) {
+       
+       &:focus {
+            color: #fff!important;  
+       }
+       
+       &:hover {
+          background-color: white;
+          color: $navy!important;
+          border-color: $navy;
+          
+          svg .fill {
+            fill: $navy;  
+            transition: none; 
+          }
+          
+          svg .stroke {
+            stroke: $navy;  
+            transition: none; 
+          }
+       }
+   }
+   
+   &.disabled {
+      background-color: $light-gray; 
+      border-color: $light-gray!important;
+      color: #fff!important;
+   }
+}
