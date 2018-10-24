@@ -43,7 +43,7 @@ get_header(); ?>
                 $th = array();
                 $th[] = array( 'data' => '<span>Date</span>', 'data-sort' => 'int' );
                 $th[] = array( 'data' => '<span>Product</span>', 'data-sort' => 'string' );
-                $th[] = array( 'data' => '<span>Order ID</span>', 'data-sort' => 'int' );
+                $th[] = array( 'data' => '<span>Order</span>', 'data-sort' => 'int' );
                 $table->set_heading( $th );
                 
                 while ( have_posts() ) :
