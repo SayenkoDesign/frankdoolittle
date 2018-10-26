@@ -12,7 +12,15 @@ function featured_designs() {
     // Use this to generate the featured design slide
     $product = new Product_Attributes();
     
-    
+    add_filter( 'the_posts', function( $posts, \WP_Query $query )
+    {
+        if( $pick = $query->get( '_shuffle_and_pick' ) )
+        {
+            shuffle( $posts );
+            $posts = array_slice( $posts, 0, (int) $pick );
+        }
+        return $posts;
+    }, 10, 2 );
     
     $out = '';
     
@@ -20,7 +28,8 @@ function featured_designs() {
         'post_type'         => 'doolittle_design',
         'orderby'           => 'RAND',
         'post_status'       => 'publish',
-        'posts_per_page'    => 20
+        'posts_per_page'    => 100,
+        '_shuffle_and_pick' => 20
     );
     
     $tax_query[] = array(
