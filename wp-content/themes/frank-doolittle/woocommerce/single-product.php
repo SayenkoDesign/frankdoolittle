@@ -39,7 +39,7 @@ get_header();
                                         $photos = $product_attributes->get_photos();
                         
                                         if( !empty( $photos ) ) {
-                                            printf( '<div class="enlarge"><a data-open="modal-slideshow">%s</a></div>', get_svg( 'search' ) );
+                                            printf( '<div class="enlarge"><a data-open="modal-slideshow" data-current-slide="0">%s</a></div>', get_svg( 'search' ) );
                                             echo $photos;
                                         }
                                         

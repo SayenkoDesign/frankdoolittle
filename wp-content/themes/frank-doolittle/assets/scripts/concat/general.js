@@ -123,18 +123,34 @@
         centerPadding: 0
     });
     
+    // Set current slide for the modal
+    $('.single-product .thumbnails.slider, .single-doolittle_design .thumbnails.slider').on('afterChange', function(event, slick, currentSlide ){
+      console.log(currentSlide);  
+      $('.photos .enlarge a').attr( 'data-current-slide', currentSlide );
+   });
+    
     
     
     $('.modal-slideshow').on('open.zf.reveal', function() {
+        
+        var curent_slide = $('.photos .enlarge a').data( 'current-slide' );
+        console.log(curent_slide);
+        
+        $('.modal-slideshow .photos.slider.slick-initialized').slick('unslick');
+        
         $('.modal-slideshow .photos.slider').slick({
             dots: false,
             arrows: true,
             infinite: true,
             slidesToShow: 1,
+            initialSlide: curent_slide,
             fade: true,
             nextArrow: '<button class="slick-next"><svg width="37" height="61" viewBox="0 0 37 61" xmlns="http://www.w3.org/2000/svg"><title>Path 3</title><path d="M0 52.936l8.707 7.976L36.61 30.456 8.706 0 0 7.977l20.594 22.48" fill-rule="nonzero" fill="#FFF" fill-opacity=".3"/></svg></button',
         prevArrow: '<button class="slick-prev"><svg width="37" height="61" viewBox="0 0 37 61" xmlns="http://www.w3.org/2000/svg"><title>Path 3 Copy</title><path d="M36.61 7.977L27.9 0 0 30.456l27.902 30.456 8.707-7.976-20.595-22.48" fill-rule="nonzero" fill="#FFF" fill-opacity=".3"/></svg></button',
         });
+        
+        // $('.modal-slideshow .photos.slider').slick( 'slickGoTo', curent_slide);
+        
     });
 
    

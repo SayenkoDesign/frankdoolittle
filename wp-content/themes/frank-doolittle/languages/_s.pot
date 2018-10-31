@@ -204,7 +204,7 @@ msgstr ""
 msgid "Design Categories"
 msgstr ""
 
-#: lib/post-types/cpt-designs.php:139, lib/post-types/cpt-designs.php:140, lib/post-types/cpt-designs.php:170, lib/post-types/cpt-designs.php:171, lib/post-types/cpt-products.php:153, lib/post-types/cpt-products.php:154, lib/post-types/cpt-products.php:185, lib/post-types/cpt-products.php:186
+#: lib/post-types/cpt-designs.php:140, lib/post-types/cpt-designs.php:141, lib/post-types/cpt-designs.php:171, lib/post-types/cpt-designs.php:172, lib/post-types/cpt-products.php:153, lib/post-types/cpt-products.php:154, lib/post-types/cpt-products.php:185, lib/post-types/cpt-products.php:186
 msgstr ""
 
 #: lib/post-types/cpt-products.php:66
