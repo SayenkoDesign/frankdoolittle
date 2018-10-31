@@ -118,7 +118,7 @@
         slidesToShow: 5,
         slidesToScroll: 1,
         asNavFor: '.single-product .images.slider, .single-doolittle_design .images.slider',
-        centerMode: true,
+        centerMode: false,
         focusOnSelect: true,
         centerPadding: 0
     });
