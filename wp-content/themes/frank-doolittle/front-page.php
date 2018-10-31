@@ -41,8 +41,15 @@ get_header(); ?>
                                  $background = sprintf( ' style="background-image: url(%s);"', $background );
                                                                   
                                  $button = $slide['button'];
+                                                                  
+                                 $white_button = $slide['white_button'];
+                                 if( !empty( $white_button ) ) {
+                                     $white_button = ' btn-white';
+                                 }
+                                 
+                                 $classes = sprintf( 'btn-primary btn-inverted%s', $white_button );
                                                  
-                                 $btn = pb_get_cta_button( $button, array( 'class' => 'btn-primary btn-inverted' ) );
+                                 $btn = pb_get_cta_button( $button, array( 'class' => $classes ) );
                                                                   
                                  $url = pb_get_cta_url( $button );
                                                                   
