@@ -421,7 +421,7 @@
                         }
                         
                         
-                        &::after, &::before {
+                        &:after, &:before {
                             right: 100%;
                             top: 50%;
                             border: solid transparent;
@@ -432,13 +432,13 @@
                             pointer-events: none;
                         }
                         
-                        &::after {
+                        &:after {
                             border-color: rgba(136, 183, 213, 0);
                             border-right-color: $light-gray;
                             border-width: 10px;
                             margin-top: -10px;
                         }
-                        &::before {
+                        &:before {
                             border-color: rgba(194, 225, 245, 0);
                             border-right-color: $gray;
                             border-width: 11px;
