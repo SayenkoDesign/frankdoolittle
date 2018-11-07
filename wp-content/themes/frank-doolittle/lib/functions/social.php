@@ -11,9 +11,9 @@ function _s_get_social_icons( $profiles = array() ) {
 		
         // defaults
         $profiles = array( 
-              'facebook' => get_field( 'facebook', 'options' ),
-              'twitter' => get_field( 'twitter', 'options' ),
-              'linkedin' => get_field( 'linkedin', 'options' ),
+              'facebook' => 'https://www.facebook.com/FrankDoolittleCompany/', //get_field( 'facebook', 'options' ),
+              'twitter' => 'https://twitter.com/fdoolittleco', // get_field( 'twitter', 'options' ),
+              //'linkedin' => get_field( 'linkedin', 'options' ),
          );
   	}
     
