@@ -147,7 +147,7 @@
 
     margin: 0 auto $global-margin;
     //overflow: hidden;
-    //max-width: 98%;
+    //max-width: 99%;
     
     
     .see-more {
@@ -163,7 +163,8 @@
     
     
     .slick-list {
-        margin: 0  ($global-padding * -1);  
+        margin: 0 -10px;  
+        
     }
     
     .slick-slide {
@@ -175,7 +176,7 @@
             position: relative;
             width: 100%;
             padding-top: 77%;
-            //border: 1px solid $gray;
+            
              
             .background {
                 position: absolute;
@@ -187,6 +188,7 @@
                 height: 100%; 
                 background-size: cover;  
                 background-position: center;
+                border: 1px solid $gray;
                 
             }
             

@@ -5,6 +5,7 @@
     // Promotions
     $('.home .promotion-slider').slick({
         dots: false,
+        autoplay:true,
         arrows: true,
         infinite: true,
         slidesToShow: 1,
