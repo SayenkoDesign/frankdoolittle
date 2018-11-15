@@ -94,7 +94,7 @@ get_header(); ?>
                             the_archive_title( '<h1 class="archive-title">', '</h1>' );
                             // the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
                             
-                            <!--<div class="filters grid-filters"><?php //echo facetwp_display( 'sort' ); ?></div>-->
+                            <div class="filters grid-filters"><?php echo facetwp_display( 'sort' ); ?></div>
                         </header>
                           
                     </div>
