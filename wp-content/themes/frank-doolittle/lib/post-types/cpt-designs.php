@@ -42,7 +42,7 @@ class CPT_Designs extends CPT_Core {
         
         );
         
-        //add_action( 'pre_get_posts', array( $this,'pre_get_posts' ) );
+        add_action( 'pre_get_posts', array( $this,'pre_get_posts' ) );
         
      }
      
