@@ -48,11 +48,13 @@ function _s_user_register( $user_id ) {
 function your_function( $user_login, $user ) {
     
     if ( DOOLITTLE_USER_ID != $user->ID ) {
-        $favorites = new Doolittle_Favorites;
-        $favorites->update_user_favorites( $user->ID );
+        //$favorites = new Doolittle_Favorites;
+        global $doolittle_favorite;
+        $doolittle_favorite->update_user_favorites( $user->ID );
         
-        $quotes = new Doolittle_Quotes;
-        $quotes->update_user_quotes( $user->ID );
+        //$quotes = new Doolittle_Quotes;
+        global $doolittle_quote;
+        $doolittle_quote->update_user_quotes( $user->ID );
         
         $packages = new Doolittle_Package;
         $packages->update_user_packages( $user->ID );

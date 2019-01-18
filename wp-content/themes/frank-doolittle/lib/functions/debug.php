@@ -1,5 +1,5 @@
 <?php
-
+/*
 function _s_display_debug_data() {
     
     if( ! is_user_logged_in() ) {
@@ -29,3 +29,4 @@ function _s_display_debug_data() {
     
     printf( '<div class="column row">%s</div>', $output );
 }
+*/

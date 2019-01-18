@@ -2,15 +2,40 @@
 
 class Doolittle_Quotes extends Doolittle_Module_Core {
     
-    var $type = 'quote';
+    private $type = 'quote';
          
     public function __construct() {
         
         parent::__construct();
         
-        $this->ID = $this->get_post_title_by_type( $this->type );
+        $this->_init();
+        
+        //$this->ID = $this->get_post_title_by_type( $this->type );
          
     }
+    
+    
+    /**
+	 * Initialize the class.
+	 *
+	 * Set the raw data, the ID and the parsed settings.
+	 *
+	 * @since 1.4.0
+	 * @access protected
+	 *
+	 * @param array $data Initial data.
+	 */
+	protected function _init() {
+        
+        $this->ID = $this->get_post( $this->type );
+        
+        $args = [
+            'count' => $this->get_count(),
+        ];
+        
+        $this->set_data( $args );
+        
+	}
     
     
     // Quote Count
@@ -26,7 +51,8 @@ class Doolittle_Quotes extends Doolittle_Module_Core {
             // check that product exists                        
             foreach( $products as $key => $product ) {
                                 
-                if( ! wc_get_product( $product ) ) {
+                //if( ! wc_get_product( $product ) ) {
+                if( FALSE === get_post_status( $product ) ) {
                     unset( $products[$key] );
                 }
             }
@@ -182,60 +208,62 @@ class Doolittle_Quotes extends Doolittle_Module_Core {
                  
     }
     
+    
     // Remove all quotes older than 30 days where user id is not numeric
     public function remove_expired() 
     {
-        // Get all quotes older than 30 days
-        $args = array(
-            'post_type' => sprintf( 'doolittle_%s', $this->type ),
-            'date_query' => array(
-                array(
-                    'column' => 'post_date_gmt',
-                    'before' => '1 month ago',
-                ),
-                array(
-                    'column' => 'post_modified_gmt',
-                    'before' => '1 month ago',
-                ),
-            ),
-            'posts_per_page' => -1,
-        );
-        
-        //error_log( print_r( $args, 1 ) );
-        
-        $loop = new WP_Query( $args );
-        
-        $post_ids = [];
-        
-        if ( $loop->have_posts() ) : 
-            while ( $loop->have_posts() ) : $loop->the_post(); 
-                
-                $user_id = get_post_meta( get_the_ID(), '_user_id', true );
-                
-                if( ! is_numeric( $user_id ) ) {
-                    $post_ids[] = get_the_ID();
-                    wp_delete_post( get_the_ID() );
-                }
-                
-            endwhile;
+        // if ( false === ( $remove_expired = get_transient( sprintf('doolittle_remove_expired_%s', $this->type ) ) ) ) :
             
-        endif;
+            //set_transient( 'doolittle_remove_expired_favorites', $remove_expired, 1 * MONTH_IN_SECONDS );
+            
+            // Get all quotes older than 30 days
+            $args = array(
+                'post_type' => sprintf( 'doolittle_%s', $this->type ),
+                'date_query' => array(
+                    array(
+                        'column' => 'post_date_gmt',
+                        'before' => '1 month ago',
+                    ),
+                    array(
+                        'column' => 'post_modified_gmt',
+                        'before' => '1 month ago',
+                    ),
+                ),
+                'posts_per_page' => 5,
+            );
+            
+            //error_log( print_r( $args, 1 ) );
+            
+            $loop = new WP_Query( $args );
+            
+            $post_ids = [];
+            
+            if ( $loop->have_posts() ) : 
+                while ( $loop->have_posts() ) : $loop->the_post(); 
+                    
+                    $user_id = get_post_meta( get_the_ID(), '_user_id', true );
+                    
+                    if( ! is_numeric( $user_id ) ) {
+                        $post_ids[] = get_the_ID();
+                        wp_delete_post( get_the_ID() );
+                    }
+                    
+                endwhile;
+                
+            endif;
+            
+            wp_reset_postdata();
         
-        wp_reset_postdata();
+        // endif;
+
+     
         
-        // error_log( print_r( $post_ids, 1 ) );
-        
+                
     }
     
     public function __destruct()
-    {
-        //$this->add_to_user();
-        
-        //error_log( 'remove favorites' );
-        
+    {        
         $this->remove_expired();
-        
-        
     }
     
     

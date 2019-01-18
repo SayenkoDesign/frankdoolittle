@@ -110,7 +110,7 @@ function _s_get_pakcgaes_table( $packages ) {
 
 function _s_get_package_data( $post_id ) {
     $package = new Doolittle_Package;
-    return $package->get_data( $post_id );
+    return $package->get_the_data( $post_id );
 }
  
 

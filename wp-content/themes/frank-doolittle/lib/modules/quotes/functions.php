@@ -1,10 +1,48 @@
 <?php
+global $doolittle_quote;
+$doolittle_quote = new Doolittle_Quotes;
+
+function quotes_add( $post_ids ) {
+    global $doolittle_quote;
+    return $doolittle_quote->add( $post_ids );
+}
+
+function quotes_delete( $post_ids ) {
+    global $doolittle_quote;
+    return $doolittle_quote->delete( $post_ids );
+}
+
+function quotes_count() {
+    $quote = new Doolittle_Quotes; // needs to be initialized because its a rest api call
+    return $quote->get_count();
+}
+
+function quotes_get_response( $args ) {
+    global $doolittle_quote;
+    return $doolittle_quote->response( $args );
+}
+
+function get_quote_class() {
+    global $doolittle_quote;
+    return $doolittle_quote->get_item( get_the_ID() ) ? 'disabled' : '';
+}
+
+function get_quote_item( $item_id ) {
+    global $doolittle_quote;
+    return $quotes->get_item( $item_id ); 
+}
+
+function _s_get_quotes_count() {
+    global $doolittle_quote;
+    return $doolittle_quote->get_data( 'count' );
+}
+
 
 function _s_get_quotes( $type = 'design' ) {
                     
-    $quotes = new Doolittle_Quotes;
+    global $doolittle_quote;
 
-    $post_ids = $quotes->get_count_by_type( 'quote', $type );
+    $post_ids = $doolittle_quote->get_count_by_type( 'quote', $type );
     
     if( empty( $post_ids ) ) {
         return false;   
@@ -52,42 +90,4 @@ function _s_get_quotes( $type = 'design' ) {
      wp_reset_postdata();  
      
      return $out;
-}
-
-
-function quotes_add( $post_ids ) {
-    $quotes = new Doolittle_Quotes;
-    return $quotes->add( $post_ids );
-}
-
-function quotes_delete( $post_ids ) {
-    $quotes = new Doolittle_Quotes;
-    return $quotes->delete( $post_ids );
-}
-
-function quotes_count() {
-    $quotes = new Doolittle_Quotes;
-    return $quotes->get_count();
-}
-
-function quotes_get_response( $args ) {
-    $quotes = new Doolittle_Quotes;
-    return $quotes->response( $args );
-}
-
-function get_quote_class() {
-    global $post;
-    $quotes = new Doolittle_Quotes();
-    return $quotes->get_item( get_the_ID() ) ? 'disabled' : ''; 
-}
-
-function get_quote_item( $item_id ) {
-    global $post;
-    $quotes = new Doolittle_Quotes();
-    return $quotes->get_item( $item_id ); 
-}
-
-function _s_get_quotes_count() {
-    $quotes = new Doolittle_Quotes();
-    return $quotes->get_count(); 
 }

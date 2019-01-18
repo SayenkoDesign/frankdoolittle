@@ -44,64 +44,17 @@
 
 
     
-    /*
-	$('.contact-button a').click(function(e){
-		e.preventDefault();
-		$('#contact').foundation('open');
-	});
-
-	$('.promotion-slider').slick({
-		slidesToShow: 1,
-		dots: true,
-		arrows: true,
-		fade: true,
-		cssEase: 'linear'
-	});
-
-    $('.featured-designs-slider').slick({
-        slidesToShow: 3,
-        arrows: true,
-        infinite: false,
-        //infinite: true,
-        //centerMode: true,
-        //variableWidth: true,
-        //centerPadding: '0px',
-        responsive: [
-        {
-          breakpoint: 767,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-          }
+    $(".slider").on("lazyLoaded", function(e, slick, image, imageSource) {
+        var $background = $(image).parent(".background");  
+        if( $background.size() ) {
+            $background.css("background-image", 'url("' + imageSource + '")').addClass("loaded"); //replace with background instead
+            image.remove(); // remove source
         }
-     ]
-    });
-    
-    $('.sidebar-slick').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-    });
-    */
-    
-    
-    // Single Product
-    
-    /*
-    $('.single-product .images.slider, .single-doolittle_design .images.slider').slick({
-        dots: true,
-        arrows: false,
-        infinite: true,
-        slidesToShow: 1,
-        fade: true,
-        customPaging: function (slider, i) {
-            var thumbnail = $(slider.$slides[i]).find("[data-thumbnail]").data('thumbnail');
-            return '<span style="background-image: url('+thumbnail+');"></span>';
-        }
-    });
-    */
+      
+     });
     
     $('.single-product .images.slider, .single-doolittle_design .images.slider').slick({
+        lazyLoad: 'ondemand',
         dots: false,
         arrows: false,
         infinite: true,
@@ -111,6 +64,7 @@
     });
     
     $('.single-product .thumbnails.slider, .single-doolittle_design .thumbnails.slider').slick({
+        lazyLoad: 'ondemand',
         dots: false,
         arrows: true,
         prevArrow: '<button class="slick-prev"><svg width="36" height="22"  viewBox="0 0 36 22" xmlns="http://www.w3.org/2000/svg"><title>Path 3</title><path d="M31.286 21.636L36 16.49 18 0 0 16.49l4.714 5.146L18 9.466" fill-rule="nonzero" fill="#1E1E1E"/></svg></button>',
@@ -172,6 +126,7 @@
     
     
      $('.single-product .related-designs-slider.slider').slick({
+        lazyLoad: 'ondemand',
         dots: false,
         arrows: true,
         infinite: true,

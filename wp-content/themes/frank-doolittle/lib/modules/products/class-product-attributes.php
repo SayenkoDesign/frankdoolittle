@@ -879,6 +879,7 @@ class Product_Attributes {
 		$title = sprintf( '<h3><a href="%s">%s</a></h3>', get_permalink(), get_the_title() );
 
 		$background = get_the_post_thumbnail_url( $post, 'large' );
+        $thumbnail = sprintf( '<img data-lazy="%s" />', $background );
 
 		if ( ! empty( $background ) ) {
 			$background = sprintf( ' style="background-image: url(%s);"', $background );
@@ -895,7 +896,7 @@ class Product_Attributes {
 
 		$details = sprintf( '<div class="hover">%s%s%s</div>', $part_number, $title, $cat );
 
-		return sprintf( '<div class="slide"><div class="background" %s>%s</div></div>', $background, $details );
+		return sprintf( '<div class="slide"><div class="background">%s%s</div></div>', $thumbnail, $details );
 	}
 
 
@@ -940,11 +941,11 @@ class Product_Attributes {
 
 		foreach ( $attachments as $attachment ) {
 
-			$large       = wp_get_attachment_image( $attachment, 'large' );
-			$thumbnail   = wp_get_attachment_image( $attachment, 'medium' );
+			$large       = wp_get_attachment_image_url( $attachment, 'large' );
+			$thumbnail   = wp_get_attachment_image_url( $attachment, 'medium' );
 			// $slides    .= sprintf( '<div data-thumbnail="%s">%s</div>', $thumbnail[0], $large );
-            $slides     .= sprintf( '<div>%s</div>', $large );
-            $thumbnails .= sprintf( '<div>%s</div>', $thumbnail );
+            $slides     .= sprintf( '<div><img data-lazy="%s" /></div>', $large );
+            $thumbnails .= sprintf( '<div><img data-lazy="%s" /></div>', $thumbnail );
 		}
         
 		if ( count( $attachments ) > 1 ) {

@@ -17,6 +17,7 @@
     
     // Featured Designs
     $('.home .featured-designs-slider.slider').slick({
+        lazyLoad: 'ondemand',
         dots: false,
         arrows: true,
         infinite: true,

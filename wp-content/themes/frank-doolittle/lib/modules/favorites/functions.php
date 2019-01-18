@@ -1,40 +1,44 @@
 <?php
 
+global $doolittle_favorite;
+$doolittle_favorite = new Doolittle_Favorites;
+
+
 function favorites_add( $post_ids ) {
-    $favorites = new Doolittle_Favorites;
-    return $favorites->add( $post_ids );
+    global $doolittle_favorite;
+    return $doolittle_favorite->add( $post_ids );
 }
 
 function favorites_delete( $post_ids ) {
-    $favorites = new Doolittle_Favorites;
-    return $favorites->delete( $post_ids );
+    global $doolittle_favorite;
+    return $doolittle_favorite->delete( $post_ids );
 }
 
 function favorites_count() {
-    $favorites = new Doolittle_Favorites;
-    return $favorites->get_count();
+    // global $doolittle_favorite;
+    $favorite = new Doolittle_Favorites; // needs to be initialized because its a rest api call
+    return $favorite->get_count();
 }
 
 function favorites_get_response( $args ) {
-    $favorites = new Doolittle_Favorites;
-    return $favorites->response( $args );
+    global $doolittle_favorite;
+    return $doolittle_favorite->response( $args );
 }
 
 function get_favorite_class() {
-    global $post;
-    $favorites = new Doolittle_Favorites();
-    return $favorites->get_item( get_the_ID() ) ? 'disabled' : ''; 
+    global $doolittle_favorite;
+    return $doolittle_favorite->get_item( get_the_ID() ) ? 'disabled' : '';
 }
 
 function _s_get_favorites_count() {
-    $favorites = new Doolittle_Favorites();
-    return $favorites->get_count(); 
+    global $doolittle_favorite;
+    return $doolittle_favorite->get_data( 'count' );
 }
 
 function _s_get_design_favorites() {
 
-    $favorites = new Doolittle_Favorites;
-    $post_ids = $favorites->get_count_by_type( 'favorite', 'design' );
+    global $doolittle_favorite;
+    $post_ids = $doolittle_favorite->get_count_by_type( 'favorite', 'design' );
 
     if( empty( $post_ids ) ) {
         return false;
@@ -79,8 +83,8 @@ function _s_get_design_favorites() {
 
 function _s_get_product_favorites() {
 
-    $favorites = new Doolittle_Favorites;
-    $post_ids = $favorites->get_count_by_type( 'favorite', 'product' );
+    global $doolittle_favorite;
+    $post_ids = $doolittle_favorite->get_count_by_type( 'favorite', 'product' );
 
     if( empty( $post_ids ) ) {
         return false;
@@ -89,9 +93,10 @@ function _s_get_product_favorites() {
     // arguments, adjust as needed
     $args = array(
         'post_type'      => 'product',
-        'posts_per_page' => -1,
+        'posts_per_page' => 200,
         'post_status'    => 'publish',
         'orderby' => 'post__in',
+        'no_found_rows' => true,
         'post__in' => $post_ids
 
      );

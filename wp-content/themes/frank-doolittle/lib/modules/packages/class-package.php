@@ -73,7 +73,7 @@ class Doolittle_Package extends Doolittle_Module_Core {
     
     
     
-    function get_data( $post_id ) {
+    function get_the_data( $post_id ) {
         
         if( ! absint( $post_id ) ) {
             return false;
@@ -303,7 +303,8 @@ class Doolittle_Package extends Doolittle_Module_Core {
                     'before' => '1 month ago',
                 ),
             ),
-            'posts_per_page' => -1,
+            'posts_per_page' => 5,
+            'post_status' => 'publish'
         );
         
         //error_log( print_r( $args, 1 ) );

@@ -1,31 +1,115 @@
 <?php
 
 class Doolittle_Module_Core {
- 
-    var $prefix = 'doolittle_';
+     
+    protected $prefix = 'doolittle_';
     
-    var $quotes;
+    protected $ID = null;
     
-    var $favorites;
+    protected $_data = [];
     
-    var $quotes_count;
+    //private $quotes;
     
-    var $favorites_count;
+    //private $favorites;
     
-    var $allowed_types = array( 'favorite', 'quote', 'package' );
+    //private $quotes_count;
     
-    var $allowed_keys = array( 'product', 'design' );
+    //private $favorites_count;
     
-    var $response = array();
+    private $allowed_types = array( 'favorite', 'quote', 'package' );
     
-    var $message = '';
+    private $allowed_keys = array( 'product', 'design' );
     
-    var $ID = '';
+    public $response = array();
+    
+    public $message = '';
+    
+    
+    
+    
     
     public function __construct() {
         
-        
+        $this->_init();
     }
+    
+    
+    /**
+	 * Initialize the class.
+	 *
+	 * Set the raw data, the ID and the parsed settings.
+	 *
+	 * @since 1.4.0
+	 * @access protected
+	 *
+	 * @param array $data Initial data.
+	 */
+	protected function _init() {
+        // $this->ID = $this->get_post( $this->type );
+	}
+    
+    
+    /**
+	 * Get items.
+	 *
+	 * Utility method that receives an array with a needle and returns all the
+	 * items that match the needle. If needle is not defined the entire haystack
+	 * will be returned.
+	 *
+	 * @since 1.4.0
+	 * @access private
+	 * @static
+	 *
+	 * @param array  $haystack An array of items.
+	 * @param string $needle   Optional. Needle. Default is null.
+	 *
+	 * @return mixed The whole haystack or the needle from the haystack when requested.
+	 */
+	protected static function _get_items( array $haystack, $needle = null ) {
+		if ( $needle ) {
+			return isset( $haystack[ $needle ] ) ? $haystack[ $needle ] : null;
+		}
+
+		return $haystack;
+	}
+
+	/**
+	 * Get the raw data.
+	 *
+	 * Retrieve all the items or, when requested, a specific item.
+ 	 *
+	 * @since 1.4.0
+	 * @access public
+	 *
+	 * @param string $item Optional. The requested item. Default is null.
+	 *
+	 * @return mixed The raw data.
+	 */
+	public function get_data( $item = null ) {
+		return self::_get_items( $this->_data, $item );
+	}
+
+
+	/**
+	 * Set data.
+	 *
+	 * Change or add new settings to an existing control in the stack.
+	 *
+	 * @since 1.4.0
+	 * @access public
+	 *
+	 * @param string|array $key   Setting name, or an array of key/value.
+	 * @param string|null  $value Optional. Setting value. Optional field if
+	 *                            `$key` is an array. Default is null.
+	 */
+	final public function set_data( $key, $value = null ) {
+		// strict check if override all settings.
+		if ( is_array( $key ) ) {
+			$this->_data = $key;
+		} else {
+			$this->_data[ $key ] = $value;
+		}
+	}
         
     
     public function get_post_title_by_type( $type ) 
@@ -36,7 +120,7 @@ class Doolittle_Module_Core {
             return false;
         }
           
-        $post_id = $this->get_post( $type );
+        $post_id = $this->ID;
         
         if( ! $post_id ) {
             return false;
@@ -54,7 +138,7 @@ class Doolittle_Module_Core {
             return false;
         }
           
-        $post_id = $this->get_post( $type );
+        $post_id = $this->ID;
         
         if( ! $post_id ) {
             return false;
@@ -79,13 +163,13 @@ class Doolittle_Module_Core {
     /*
      * Get post by type
     */
-    public function get_post( $type ) 
+    public function get_post( $type, $create = false ) 
     {
         
         if( empty( $type ) ) {
             return false;
         }
-        
+                
         $post_ids = array();
         
         
@@ -93,6 +177,7 @@ class Doolittle_Module_Core {
             'post_type'      => sprintf( 'doolittle_%s', $type ),
             'posts_per_page' => 1,
             'post_status'    => 'publish',
+            //'no_found_rows' => true,
             'meta_query' => array(
                 array(
                     'key' => '_user_id',
@@ -100,32 +185,39 @@ class Doolittle_Module_Core {
                 )
             )
         );
+        
+        //error_log( print_r( $args, 1) );
     
         // Use $loop, a custom variable we made up, so it doesn't overwrite anything
         $loop = new WP_Query( $args );
         
-        $found_posts = $loop->found_posts;
-          
-        if( $found_posts ) {
-            $post_ids = wp_list_pluck( $loop->posts, 'ID' );
-            wp_reset_postdata();
-            return $post_ids[0];
-        }
+        //$found_posts = $loop->found_posts;
+        $post_ids = wp_list_pluck( $loop->posts, 'ID' );
         
         wp_reset_postdata();
         
-        $post_id = wp_insert_post( array(
-            'post_title'    => md5( uniqid( rand(), true ) ),
-            'post_type'     => sprintf( 'doolittle_%s', $type ),
-            'post_status'   => 'publish',
-            'meta_input'    => array(
-                    '_user_id' => DOOLITTLE_USER_ID
-            )
-        ), false ); 
+        //error_log( sprintf('user id: %s', DOOLITTLE_USER_ID ) );
+          
+        if( ! empty( $post_ids ) ) {            
+            return $post_ids[0];
+        }
         
-        error_log( sprintf( 'New ID created: %s', $post_id ) );
-        
-        return $post_id;
+        if( true == $create ) {
+            $args = array(
+                'post_title'    => md5( uniqid( rand(), true ) ),
+                'post_type'     => sprintf( 'doolittle_%s', $type ),
+                'post_status'   => 'publish',
+                'meta_input'    => array(
+                        '_user_id' => DOOLITTLE_USER_ID
+                )
+            );
+                    
+            $post_id = wp_insert_post( $args, false ); 
+            
+            error_log( sprintf( 'New %s ID created: %s %s', sprintf( 'doolittle_%s', $type ), $post_id, print_r( $args, 1) ) );
+            
+            return $post_id;
+        }
         
     }
     
@@ -185,7 +277,7 @@ class Doolittle_Module_Core {
          $key = $this->get_key( $item_id  );
          
          // Post we'll be adding item to
-         $post_id = $this->get_post( $this->type );
+         $post_id = $this->ID;
           
          if( ! $post_id ) {
             return false;
@@ -218,8 +310,8 @@ class Doolittle_Module_Core {
             return false;
         }        
         
-        // Post we'll be adding item to
-        $post_id = $this->get_post( $type );
+        // Post we'll be adding item to, create if needed
+        $post_id = $this->get_post( $type, true );
                 
         if( ! $post_id ) {
             return false;
@@ -254,7 +346,7 @@ class Doolittle_Module_Core {
         }
         
         // Post we'll be adding item to
-        $post_id = $this->get_post( $type );
+        $post_id = $this->ID;
         
         if( ! $post_id ) {
             return false;
