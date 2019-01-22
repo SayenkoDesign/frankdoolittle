@@ -181,7 +181,7 @@ class Doolittle_Package extends Doolittle_Module_Core {
             return false;
         }
         
-        $removed = wp_delete_post( $post_id );
+        $removed = wp_trash_post( $post_id );
         
         if( !is_wp_error( $removed ) ) {
             return $removed->ID;
@@ -276,7 +276,7 @@ class Doolittle_Package extends Doolittle_Module_Core {
             }
             
             
-            wp_delete_post( $logged_out_post_id );
+            wp_trash_post( $logged_out_post_id );
             
         }
         else {
@@ -320,7 +320,7 @@ class Doolittle_Package extends Doolittle_Module_Core {
                 
                 if( ! is_numeric( $user_id ) ) {
                     $post_ids[] = get_the_ID();
-                    wp_delete_post( get_the_ID() );
+                    wp_trash_post( get_the_ID() );
                 }
                 
             endwhile;

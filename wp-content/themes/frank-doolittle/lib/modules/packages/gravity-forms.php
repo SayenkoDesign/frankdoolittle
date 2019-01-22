@@ -127,7 +127,7 @@ function doolittle_mark_packages_private( $entry, $form ) {
                   wp_update_post( $my_post );
             }
             
-            wp_delete_post( $quote_id );
+            wp_trash_post( $quote_id );
         }
     }
 }
