@@ -263,7 +263,7 @@ class Doolittle_Quotes extends Doolittle_Module_Core {
     
     public function __destruct()
     {        
-        $this->remove_expired();
+        //$this->remove_expired();
     }
     
     
