@@ -127,8 +127,13 @@ function doolittle_mark_packages_private( $entry, $form ) {
                   wp_update_post( $my_post );
             }
             
-            wp_trash_post( $quote_id );
-            error_log( sprintf( 'Add to trash: [Post ID: %s] by Gravity_Forms::doolittle_mark_packages_private', $quote_id ) );
+            if( 'doolittle_quote' == get_post_type( $quote_id ) ) {
+                wp_trash_post( $quote_id );
+                error_log( sprintf( 'Add to trash: [Post ID: %s] by Gravity_Forms::doolittle_mark_packages_private', $quote_id ) );        
+            } else {
+                error_log( sprintf( '(Wrong) Add to trash: [Post ID: %s] by Gravity_Forms::doolittle_mark_packages_private', $quote_id ) );
+            }
+            
         }
     }
 }

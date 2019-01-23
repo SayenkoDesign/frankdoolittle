@@ -199,8 +199,14 @@ class Doolittle_Favorites extends Doolittle_Module_Core {
                 }
             }
             
-            wp_trash_post( $logged_out_post_id );
-            error_log( sprintf( 'Add to trash: [Post ID: %s] by Doolittle_Favorites::update_user_favorites', $logged_out_post_id ) );
+            if( 'doolittle_favorite' == get_post_type( $logged_out_post_id ) ) {
+                wp_trash_post( $logged_out_post_id );
+                error_log( sprintf( 'Add to trash: [Post ID: %s] by Doolittle_Favorites::update_user_favorites', $logged_out_post_id ) );
+            } else {
+                error_log( sprintf( '(Wrong) Add to trash: [Post ID: %s] by Doolittle_Favorites::update_user_favorites', $logged_out_post_id ) );
+            }
+                
+            
             
         }
         else {
@@ -247,8 +253,15 @@ class Doolittle_Favorites extends Doolittle_Module_Core {
                     
                     if( ! is_numeric( $user_id ) ) {
                         $post_ids[] = get_the_ID();
-                        wp_trash_post( get_the_ID() );
-                        error_log( sprintf( 'Add to trash: [Post ID: %s] by Doolittle_Favorites::remove_expired', get_the_ID() ) );
+                        
+                        if( 'doolittle_favorite' == get_post_type( get_the_ID() ) ) {
+                            wp_trash_post( get_the_ID() );
+                            error_log( sprintf( 'Add to trash: [Post ID: %s] by Doolittle_Favorites::remove_expired', get_the_ID() ) );
+                        } else {
+                            error_log( sprintf( '(Wrong) Add to trash: [Post ID: %s] by Doolittle_Favorites::remove_expired', get_the_ID() ) );
+                        }
+                        
+                        
                     }
                     
                 endwhile;
