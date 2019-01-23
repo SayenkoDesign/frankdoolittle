@@ -182,6 +182,7 @@ class Doolittle_Package extends Doolittle_Module_Core {
         }
         
         $removed = wp_trash_post( $post_id );
+        error_log( sprintf( 'Add to trash: [Post ID: %s] by Doolittle_Package::delete_item', $post_id ) );
         
         if( !is_wp_error( $removed ) ) {
             return $removed->ID;
@@ -277,6 +278,7 @@ class Doolittle_Package extends Doolittle_Module_Core {
             
             
             wp_trash_post( $logged_out_post_id );
+            error_log( sprintf( 'Add to trash: [Post ID: %s] by Doolittle_Package::update_user_packages', $logged_out_post_id ) );
             
         }
         else {
@@ -321,6 +323,7 @@ class Doolittle_Package extends Doolittle_Module_Core {
                 if( ! is_numeric( $user_id ) ) {
                     $post_ids[] = get_the_ID();
                     wp_trash_post( get_the_ID() );
+                    error_log( sprintf( 'Add to trash: [Post ID: %s] by Doolittle_Package::remove_expired', get_the_ID() ) );
                 }
                 
             endwhile;
@@ -335,7 +338,7 @@ class Doolittle_Package extends Doolittle_Module_Core {
     public function __destruct()
     {
         
-        $this->remove_expired();
+        //$this->remove_expired();
         
     }
   
