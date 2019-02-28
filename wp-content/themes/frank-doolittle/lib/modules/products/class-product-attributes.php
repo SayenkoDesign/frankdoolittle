@@ -944,7 +944,14 @@ class Product_Attributes {
 			$large       = wp_get_attachment_image_url( $attachment, 'large' );
 			$thumbnail   = wp_get_attachment_image_url( $attachment, 'medium' );
 			// $slides    .= sprintf( '<div data-thumbnail="%s">%s</div>', $thumbnail[0], $large );
-            $slides     .= sprintf( '<div><img data-lazy="%s" /></div>', $large );
+            
+            if ( count( $attachments ) > 1 ) {
+                $slides .= sprintf( '<div><img data-lazy="%s" /></div>', $large );
+            } else {
+                $slides .= sprintf( '<div><img src="%s" /></div>', $large );   
+            }
+            
+            
             $thumbnails .= sprintf( '<div><img data-lazy="%s" /></div>', $thumbnail );
 		}
         
